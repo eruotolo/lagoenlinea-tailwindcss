@@ -39,6 +39,24 @@
 .btn-metage-down{
     @apply border-[1px] border-amarillo md:text-[16px] 3xl:text-[18px] md:w-[200px] 3xl:w-[250px] my-[10px] py-[8px] rounded-[12px] hover:bg-amarillo
 }
+.page-item{
+    @apply text-[16px] font-medium leading-[16px] text-white bg-azul border-[1px] border-azul px-[25px] pt-[6px] pb-[4px] rounded-[20px]
+}
+.disable{
+    @apply border-[#B6DDF8] bg-[#B6DDF8]
+}
+.item-filtro{
+    @apply bg-[#026bb2] rounded-[15px] text-white pt-[6px] pb-[7px] mr-[10px] mb-[10px] float-left inline text-center w-[170px] my-[4px] text-[16px] leading-[16px] disabled:bg-[#B6DDF8] disabled:border-[#B6DDF8]
+}
+.btn-close{
+    @apply w-[4px] h-[8px]
+}
+.libro-contenido{
+    @apply bg-[#f8fbff] rounded-[20px] p-[60px]
+}
+.item-relacionado{
+    @apply border-[1px] border-[#5f6060] p-[30px] rounded-[20px] mx-[15px]
+}
 /*--------------------------------- END RE-USABLE -------------------------------------*/
 
 /*--------------------------------- FONTS ---------------------------------------------*/
@@ -466,5 +484,3 @@ ul.dashed-1 > li:before {
 .list-tecno > li {
     line-height: 36px !important;
 }
-/*--------------------- Botones Teledetección ----------------------*/
-

@@ -93,35 +93,38 @@
     <div class="container mx-auto md:pt-[50px] 3xl:pt-[100px]">
         <div class="flex flex-col">
             <h2 class="md:text-[20px] 3xl:text-[26px]">FILTRAR RESULTADOS</h2>
-            <?php
-            if (isset($_GET['materia'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='materia'>Materia <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['tiporecurso'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='tiporecurso'>Tipo de Recurso <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['pais'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='pais'>Pais <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['region'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='region'>Region <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['cuenca'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='cuenca'>Cuenca <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['idioma'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='idioma'>Idioma <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['tipoinstitucion'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='tipoinstitucion'>Tipo de Institucion <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['search'])) {
-                echo "<h6 class='item-filtro item-filtro-pelar' key='search'>Busqueda: {$_GET['search']} <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            if (isset($_GET['startdate']) && isset($_GET['enddate'])) {
-                echo "<h6 class='item-filtro item-filtro-fechapublicacion' key='fechapublicacion'>Fecha Publicacion <button type='button' class='m-auto btn-close btn-close-white me-2' data-bs-dismiss='toast' aria-label='Close'></button></h6>";
-            }
-            ?>
+            <div class="container flex flex-row">
+                <?php
+                if (isset($_GET['materia'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='materia'>Materia <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['tiporecurso'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='tiporecurso'>Tipo de Recurso <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['pais'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='pais'>Pais <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['region'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='region'>Region <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['cuenca'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='cuenca'>Cuenca <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['idioma'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='idioma'>Idioma <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['tipoinstitucion'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='tipoinstitucion'>Tipo de Institucion <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['search'])) {
+                    echo "<h6 class='item-filtro item-filtro-pelar' key='search'>Busqueda: {$_GET['search']} <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                if (isset($_GET['startdate']) && isset($_GET['enddate'])) {
+                    echo "<h6 class='item-filtro item-filtro-fechapublicacion' key='fechapublicacion'>Fecha Publicacion <button type='button' class='m-auto btn-close btn-close-white me-2 inline-block' data-bs-dismiss='toast' aria-label='Close'><svg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke-width='1.5' stroke='currentColor' class='w-5 h-4'><path stroke-linecap='round' stroke-linejoin='round' d='M6 18L18 6M6 6l12 12' /></svg></button></h6>";
+                }
+                ?>
+            </div>
+
             <div class="resta-filtros mt-[10px]">
                 <button id='reset' class="text-azul md:text-[18px] md:leading-[20px] 3xl:text-[22px] 3xl:leading-[22px]">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="inline-block h-6 w-6">
@@ -428,20 +431,22 @@
                     $materia = implode(',',$filtros['materia']);
                     if (sizeof($filtros['materia']) > 0) {
                         $materiadiv = "<div class='col-md-auto cat-libro'>
-                                <h6>$materia</h6>
-                                </div>";
+                                            <h6>$materia</h6>
+                                       </div>";
                     } else {
                         $materiadiv = "";
                     }
 
                     if ($row['TipoRecurso'] <> '') {
-                        $tiporecurso = "<h1 class='uppercase font-medium md:text-[18px] md:leading-[18px] 3xl:text-[20px] 3xl:leading-[20px]'>{$row['TipoRecurso']}</h1>";
+                        $tiporecurso = "<div class='col-md-auto cat-libro'>
+                                            <h5>{$row['TipoRecurso']}</h5>
+                                        </div>";
                     } else {
                         $tiporecurso = "";
                     }
                     $institucion = implode(',',$filtros['institucion']);
                     echo "                    
-                    <div class='tarjeta-libro md:mb-[20px] bg-[#f8fbff] rounded-[20px]'>
+                    <div class='tarjeta-libro md:mb-[20px] bg-[#f8fbff] rounded-[15px]'>
                         <div class='container flex flex-row mx-auto p-[40px]'>
                             <div class='w-3/12 flex flex-col justify-center items-center content-center pr-[10px]'>
                                 <img src='admin/api/{$row['ImagenDestacada']}' class='img-fluid rounded-start' alt='...'>
@@ -461,7 +466,7 @@
                     </div>";
                 }
                 ?>
-                <div class="flex flex-row paginador justify-center">
+                <div class="flex flex-row paginador justify-center mt-[40px]">
                     <nav aria-label="Page navigation example">
                         <ul class="pagination justify-content-center list-none flex">
 
@@ -475,7 +480,9 @@
                                     }
                                 } ?>">Anterior</a>
                             </li>
-                            <li>Pagina <?php echo "$pageno/$total_pages" ?></li>
+
+                            <li class="mx-[25px] text-[16px] leading-[16px] pt-[6px]">Pagina <?php echo "$pageno/$total_pages" ?></li>
+
                             <li class="page-item <?php if($pageno >= $total_pages){ echo 'disabled'; } ?>">
                                 <a class="" href="<?php if($pageno >= $total_pages){ echo '#'; } else {
                                     if (sizeof($_GET) > 0) {
@@ -498,13 +505,297 @@
 
 </section>
 
-<!---------- IN FOOTER DE LA PAGINA ----------->
+<!----------- IN FOOTER DE LA PAGINA ----------->
 <?php include('assets/layout/footer.php') ?>
-<!------- PACK DE JS NECESARIOS PARA EL FUNCIONAMIENTO --------->
+<!----------- PACK DE JS NECESARIOS PARA EL FUNCIONAMIENTO --------->
 <?php include('assets/layout/script.php') ?>
 <!------------------------------- GALLERIA ------------------------------->
 <script src="assets/dist/js/lightbox-plus-jquery.min.js"></script>
+<!-------------------------- Option 3: Other JS ------------------------------->
+<script src="assets/js/repositorio.js"></script>
 
+<script>
+    $(document).ready(function() {
+
+        $('.tiporecurso').change(function () {
+            if (this.checked) {
+                $('.tiporecurso').prop('checked', false);
+                $(this).prop('checked', true);
+            }
+        })
+
+        <?php
+        // Materia
+        if (isset($_GET['materia'])) {
+        $arr = explode(",",$_GET['materia']);
+        foreach ($arr as $val) {
+        ?>
+        $('.materia[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Tipo de Recurso
+        if (isset($_GET['tiporecurso'])) {
+        $arr = explode(",",$_GET['tiporecurso']);
+        foreach ($arr as $val) {
+        ?>
+        $('.tiporecurso[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Pais
+        if (isset($_GET['pais'])) {
+        $arr = explode(",",$_GET['pais']);
+        foreach ($arr as $val) {
+        ?>
+        $('.pais[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Region
+        if (isset($_GET['region'])) {
+        $arr = explode(",",$_GET['region']);
+        foreach ($arr as $val) {
+        ?>
+        $('.region[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Cuenca
+        if (isset($_GET['cuenca'])) {
+        $arr = explode(",",$_GET['cuenca']);
+        foreach ($arr as $val) {
+        ?>
+        $('.cuenca[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Idioma
+        if (isset($_GET['idioma'])) {
+        $arr = explode(",",$_GET['idioma']);
+        foreach ($arr as $val) {
+        ?>
+        $('.idioma[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        <?php
+        // Tipo de Publicacion
+        if (isset($_GET['tipoinstitucion'])) {
+        $arr = explode(",",$_GET['tipoinstitucion']);
+        foreach ($arr as $val) {
+        ?>
+        $('.tipoinstitucion[value=<?php echo $val ?>]').prop('checked',true);
+        <?php
+        }
+        }
+        ?>
+
+        $('#filter').click(function () {
+            var startdate = $('#startDate').val();
+            var enddate = $('#endDate').val();
+            if (startdate != '' && enddate != '') {
+                if (startdate > enddate) {
+                    alert("Fecha Publicacion - Desde no puede ser posterior a Hasta");
+                    return  false;
+                } else {
+                    var maxkey = Object.keys(params).length;
+                    params['startdate'] = startdate;
+                    params['enddate'] = enddate;
+
+                }
+            }
+
+            // Materia
+            var materia = []
+            $('.materia:checkbox:checked').each(function () {
+                materia.push($(this).val());
+            });
+            if (materia.length > 0) {
+                params['materia'] = materia.join(',');
+            }
+
+            // Tipo de Recurso
+            var tiporecurso = []
+            $('.tiporecurso:checkbox:checked').each(function () {
+                tiporecurso.push($(this).val());
+            });
+            if (tiporecurso.length > 0) {
+                params['tiporecurso'] = tiporecurso.join(',');
+            }
+
+            // Pais
+            var pais = []
+            $('.pais:checkbox:checked').each(function () {
+                pais.push($(this).val());
+            });
+            if (pais.length > 0) {
+                params['pais'] = pais.join(',');
+            }
+
+            // Region
+            var region = []
+            $('.region:checkbox:checked').each(function () {
+                region.push($(this).val());
+            });
+            if (region.length > 0) {
+                params['region'] = region.join(',');
+            }
+
+            // Cuenca
+            var cuenca = []
+            $('.cuenca:checkbox:checked').each(function () {
+                cuenca.push($(this).val());
+            });
+            if (cuenca.length > 0) {
+                params['cuenca'] = cuenca.join(',');
+            }
+
+            // Idioma
+            var idioma = []
+            $('.idioma:checkbox:checked').each(function () {
+                idioma.push($(this).val());
+            });
+            if (idioma.length > 0) {
+                params['idioma'] = idioma.join(',');
+            }
+
+            // Tipo Institucion
+            var tipoinstitucion = []
+            $('.tipoinstitucion:checkbox:checked').each(function () {
+                tipoinstitucion.push($(this).val());
+            });
+            if (tipoinstitucion.length > 0) {
+                params['tipoinstitucion'] = tipoinstitucion.join(',');
+            }
+            params['pageno'] = '';
+
+            window.location.href = 'biblioteca.php' + paramsToUrl();
+        })
+
+        function getSearchParameters() {
+            var prmstr = window.location.search.substr(1);
+            return prmstr != null && prmstr != "" ? transformToAssocArray(prmstr) : {};
+        }
+
+        function transformToAssocArray( prmstr ) {
+            var params = {};
+            var prmarr = prmstr.split("&");
+            for ( var i = 0; i < prmarr.length; i++) {
+                var tmparr = prmarr[i].split("=");
+                params[tmparr[0]] = tmparr[1];
+            }
+            return params;
+        }
+
+        var params = getSearchParameters();
+
+        function removeItemOnce(arr, value) {
+            for (var i = arr.length; i--;) {
+                if (arr[i] === val) {
+                    arr.splice(i, 1);
+                }
+            }
+            return arr;
+        }
+
+        function paramsToUrl () {
+            var url = '';
+            var i = 0;
+            Object.keys(params).forEach(fkey => {
+                if (i != 0) {
+                    url = url + '&' + fkey + '=' + params[fkey];
+                } else {
+                    url = url + '?' + fkey + '=' + params[fkey];
+                }
+                i = i + 1;
+            });
+            return url
+        }
+
+        $('.item-filtro-pelar').click(function () {
+            var key = $(this).attr('key');
+            var url = 'biblioteca.php';
+            var i = 0;
+            Object.keys(params).forEach(fkey => {
+
+                if (key != fkey) {
+                    if (i != 0) {
+                        url = url + '&' + fkey + '=' + params[fkey];
+                    } else {
+                        url = url + '?' + fkey + '=' + params[fkey];
+                    }
+                    i = i + 1;
+                }
+
+            });
+            window.location.href = url;
+        })
+
+        $('.item-filtro-fechapublicacion').click(function () {
+            var url = 'biblioteca.php';
+            var i = 0;
+            Object.keys(params).forEach(fkey => {
+
+                if ('startdate' != fkey && 'enddate' != fkey) {
+                    if (i != 0) {
+                        url = url + '&' + fkey + '=' + params[fkey];
+                    } else {
+                        url = url + '?' + fkey + '=' + params[fkey];
+                    }
+                    i = i + 1;
+                }
+
+            });
+            window.location.href = url;
+        })
+
+
+        $('.link').click(function() {
+            if (paramsToUrl() == '') {
+                window.location.href = 'biblioteca-view.php?id=' + $(this).attr('id');
+            } else {
+                window.location.href = 'biblioteca-view.php' + paramsToUrl() + '&id=' + $(this).attr('id');
+            }
+
+        })
+
+        $('#search_btn').click(function () {
+            var search = $('#search').val();
+            var url = window.location.href;
+            params['pageno'] = '';
+
+            if (paramsToUrl() == '') {
+                window.location.href = "biblioteca.php?search=" + search;
+            } else {
+                removeItemOnce(paramsToUrl, "search");
+                window.location.href = "biblioteca.php" + paramsToUrl() + "&search=" + search;
+            }
+            return false;
+        })
+        $('#reset').click(function() {
+            window.location.href = 'biblioteca.php';
+        })
+
+    });
+</script>
 
 </body>
 </html>

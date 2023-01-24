@@ -94,7 +94,7 @@
                 <h2 id="accordion-collapse-heading-1">
                     <button type="button" class="flex font-medium text-left text-oscuro text-[18px] w-[350px] items-center justify-between border border-[1px] border-azul rounded-[20px] px-[20px] pt-[8px] pb-[6px] focus:text-azul" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
                         <span>TECNOLOGÍA</span>
-                        <svg data-accordion-icon class="w-6 h-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg data-accordion-icon class="h-6 w-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                 </h2>
             </div>
@@ -128,7 +128,7 @@
                 <h2 id="accordion-collapse-heading-2">
                     <button type="button" class="flex font-medium text-left text-oscuro text-[18px] w-[350px] items-center justify-between border border-[1px] border-azul rounded-[20px] px-[20px] pt-[8px] pb-[6px] focus:text-azul" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
                         <span>INDICADORES</span>
-                        <svg data-accordion-icon class="w-6 h-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg data-accordion-icon class="h-6 w-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                 </h2>
             </div>
@@ -188,7 +188,7 @@
                 <h2 id="accordion-collapse-heading-3">
                     <button type="button" class="flex font-medium text-left text-oscuro text-[18px] w-[350px] items-center justify-between border border-[1px] border-azul rounded-[20px] px-[20px] pt-[8px] pb-[6px] focus:text-azul" data-accordion-target="#accordion-collapse-body-3" aria-expanded="false" aria-controls="accordion-collapse-body-3">
                         <span>METODOLOGÍA</span>
-                        <svg data-accordion-icon class="w-6 h-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                        <svg data-accordion-icon class="h-6 w-6 shrink-0 text-azul" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
                     </button>
                 </h2>
             </div>
@@ -272,7 +272,7 @@
         </div>
     </div>
     <div class="container mx-auto md:mt-[50px] 3xl:mt-[80px]">
-        <div class="flex flex-row justify-center ">
+        <div class="flex flex-row justify-center">
             <label class="btn-dropdown btn-tele-año mr-[5px]">
                 <div class="dd-button" id='yearshow'>AÑO</div>
                 <input type="checkbox" class="dd-input" id="test">
@@ -313,7 +313,7 @@
 
     <div class="container mx-auto mt-[30px]">
         <div class="flex flex-row">
-            <div class="w-9/12 tz-gallery flex flex-col items-center justify-center content-center" id='imagediv'>
+            <div class="flex w-9/12 flex-col content-center items-center justify-center tz-gallery" id='imagediv'>
                 <?php
                 if ($lastrow['ImagePath'] <> '') {
                     ?>
@@ -331,17 +331,17 @@
             <div class="w-3/12">
                 <?php
                 if ($lastrow['Type'] == 1) {
-                    $btn11 = "<button id='type_1' class='btn-metage typebtn  btn-tele-activo' nro='1'>ATENUACIÓN DIFUSA</button>";
+                    $btn11 = "<button id='type_1' class='btn-metage typebtn btn-tele-activo' nro='1'>ATENUACIÓN DIFUSA</button>";
                 } else {
                     $btn11 = "<button id='type_1' class='btn-metage typebtn' nro='1'>ATENUACIÓN DIFUSA</button>";
                 }
                 if ($lastrow['Type'] == 2) {
-                    $btn12 = "<button id='type_2' class='btn-metage typebtn  btn-tele-activo' nro='2'>MATERIAL EN SUSPENSIÓN</button>";
+                    $btn12 = "<button id='type_2' class='btn-metage typebtn btn-tele-activo' nro='2'>MATERIAL EN SUSPENSIÓN</button>";
                 } else {
                     $btn12 = "<button id='type_2' class='btn-metage typebtn' nro='2'>MATERIAL EN SUSPENSIÓN</button>";
                 }
                 if ($lastrow['Type'] == 3) {
-                    $btn13 = "<button id='type_3' class='btn-metage typebtn  btn-tele-activo' nro='3'>CLOROFILA</button>";
+                    $btn13 = "<button id='type_3' class='btn-metage typebtn btn-tele-activo' nro='3'>CLOROFILA</button>";
                 } else {
                     $btn13 = "<button id='type_3' class='btn-metage typebtn' nro='3'>CLOROFILA</button>";
                 }
