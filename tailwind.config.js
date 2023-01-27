@@ -16,6 +16,7 @@ module.exports = {
       },
       fontFamily:{
         'blogger': "'Blogger Sans', sans",
+        'sora': "'Sora', sans",
       },
       backgroundImage:{
         'inicio': "url('../img/background_home.png')",
