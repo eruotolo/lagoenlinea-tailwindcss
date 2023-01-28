@@ -76,7 +76,7 @@
 <!-- End Google Tag Manager (noscript) -->
 
 <!------------------------------- IN CABEZAL DE LA PAGINA ------------------------------>
-<?php include('assets/layout/header.php') ?>
+<?php include('assets/layout/header-lsh.php') ?>
 <?php include('assets/layout/menustick.php') ?>
 <!----------------------------- END CABEZAL DE LA PAGINA ------------------------------->
 

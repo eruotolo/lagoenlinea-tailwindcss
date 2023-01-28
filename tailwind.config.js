@@ -21,6 +21,7 @@ module.exports = {
       backgroundImage:{
         'inicio': "url('../img/background_home.png')",
         'inicio-01': "url('../img/background_home_02.webp')",
+        'ubicacion': "url('../img/lagosinhuella/mapa-ubicacion.svg')",
       },
       screens: {
         'sm': '640px',

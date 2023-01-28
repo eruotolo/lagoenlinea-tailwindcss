@@ -1193,6 +1193,26 @@ html {
   height: 0.25rem;
 }
 
+.h-\[1200px\] {
+  height: 1200px;
+}
+
+.h-\[1000\] {
+  height: 1000;
+}
+
+.h-\[1000px\] {
+  height: 1000px;
+}
+
+.h-\[1100px\] {
+  height: 1100px;
+}
+
+.h-\[90px\] {
+  height: 90px;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1587,6 +1607,11 @@ html {
   border-color: rgb(106 128 172 / var(--tw-border-opacity));
 }
 
+.border-\[\#c0e4f1\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(192 228 241 / var(--tw-border-opacity));
+}
+
 .bg-azul {
   --tw-bg-opacity: 1;
   background-color: rgb(2 107 172 / var(--tw-bg-opacity));
@@ -1651,6 +1676,16 @@ html {
   background-color: rgb(106 136 180 / var(--tw-bg-opacity));
 }
 
+.bg-\[\#c0e4f1\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(192 228 241 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#6893bf\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(104 147 191 / var(--tw-bg-opacity));
+}
+
 .bg-inicio {
   background-image: url('../img/background_home.png');
 }
@@ -1659,12 +1694,20 @@ html {
   background-image: url('../img/background_home_02.webp');
 }
 
+.bg-ubicacion {
+  background-image: url('../img/lagosinhuella/mapa-ubicacion.svg');
+}
+
 .bg-cover {
   background-size: cover;
 }
 
 .bg-bottom {
   background-position: bottom;
+}
+
+.bg-center {
+  background-position: center;
 }
 
 .bg-no-repeat {
@@ -2175,6 +2218,11 @@ html {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-\[\#6a9ac5\] {
+  --tw-text-opacity: 1;
+  color: rgb(106 154 197 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3258,6 +3306,10 @@ ul.dashed-1 > li:before {
     margin-bottom: 0.5rem;
   }
 
+  .md\:mt-\[10px\] {
+    margin-top: 10px;
+  }
+
   .md\:h-\[400px\] {
     height: 400px;
   }
@@ -3364,6 +3416,14 @@ ul.dashed-1 > li:before {
 
   .md\:h-6 {
     height: 1.5rem;
+  }
+
+  .md\:h-\[860px\] {
+    height: 860px;
+  }
+
+  .md\:h-\[760px\] {
+    height: 760px;
   }
 
   .md\:w-auto {
@@ -3666,6 +3726,14 @@ ul.dashed-1 > li:before {
   .md\:leading-\[55px\] {
     line-height: 55px;
   }
+
+  .md\:text-\[18\] {
+    color: 18;
+  }
+
+  .md\:text-\[20\] {
+    color: 20;
+  }
 }
 
 @media (min-width: 1441px) {
@@ -3879,6 +3947,18 @@ ul.dashed-1 > li:before {
 
   .\33xl\:h-\[80px\] {
     height: 80px;
+  }
+
+  .\33xl\:h-\[1200px\] {
+    height: 1200px;
+  }
+
+  .\33xl\:h-\[1100px\] {
+    height: 1100px;
+  }
+
+  .\33xl\:h-\[1000px\] {
+    height: 1000px;
   }
 
   .\33xl\:w-\[450px\] {
