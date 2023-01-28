@@ -26,19 +26,20 @@
 
     * LISTADO DE LOS 16 PUNTOS DE TOMA DE MUESTRA:
             NOMBRE DE PUNTO	            Lat	             Long
-            Santa Rosa Final	        41°18'42.55"S	 72°58'39.64"O
-            Cerro Philippi	            41°18'46.10"S	 72°58'41.42"O
-            Aliviadero Santa Rosa	    41°18'55.76"S	 72°58'56.00"O
-            Diego Portales	            41°18'58.06"S	 72°58'56.06"O
-            Walker Martínez	            41°19'0.34"S	 72°58'55.00"O
-            Muelle	                    41°19'3.23"S	 72°58'53.27"O
-            Hotel Radisson	            41°19'4.92"S	 72°58'51.80"O
-            Hotel Bellavista	        41°19'9.01"S	 72°58'46.05"O
-            Vicente Pérez Rosales	    41°19'31.51"S	 72°58'14.48"O
-            Antonio Varas	            41°19'34.96"S	 72°58'2.66"O
-            Eleuterio Ramírez	        41°19'36.71"S	 72°57'55.58"O
-            Freire	                    41°19'37.86"S	 72°57'50.27"O
-            Aliviadero Pto. Chico	    41°19'40.07"S	 72°57'38.19"O
-            Quebrada Honda	            41°19'40.09"S	 72°57'28.39"O
-            Marina de Puerto Varas	    41°19'31.14"S	 72°57'20.66"O
-            Doña Ema	                41°19'20.85"S	 72°57'10.88"O
+            Santa Rosa Final        -41.31181944	-72.97767778
+            Cerro Philippi          -41.31280556	-72.97817222
+            Aliviadero Santa Rosa   -41.31548889	-72.98222222
+            Diego Portales          -41.31612778	-72.98223889
+            Walker Martínez	        -41.31676111	-72.98194444
+            Muelle                  -41.31756389	-72.98146389
+            Hotel Radisson          -41.31803333	-72.98105556
+            Hotel Bellavista        -41.31916944	-72.97945833
+            Vicente Pérez Rosales   -41.32541944	-72.97068889
+            Antonio Varas           -41.32637778	-72.96740556
+            Eleuterio Ramírez       -41.32686389	-72.58210556
+            Freire                  -41.32718333	-72.58063056
+            Aliviadero Pto. Chico   -41.32779722	-72.57727500
+            Quebrada Honda	        -41.32780278	-72.57455278
+            Marina de Puerto Varas  -41.32531667	-72.57240556
+            Doña Ema                -41.32245833	-72.56968889
+
