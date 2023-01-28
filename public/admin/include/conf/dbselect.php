@@ -4,8 +4,8 @@ error_reporting(0);
 if ($_SERVER["REMOTE_ADDR"]  == "127.0.0.1" || $_SERVER["REMOTE_ADDR"] == '::1') {
 	$host = 'localhost';
 	$user = 'root';
-	$password = 'root';
-	$txt_db_name = 'lagoenli_lago';
+	$password = 'password';
+	$txt_db_name = 'lago';
 	$dbname = $txt_db_name;
 
 } else {

@@ -24,6 +24,11 @@
     <!-- CSS PERSONALIZADO -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/dist/css/lightbox.min.css">
+	<style>
+		.gm-ui-hover-effect {
+			display: none !important;
+		}
+	</style>
 
     <!-- SEO ORGANICO -->
     <meta http-equiv="content-Type" content="text/html; ISO-8859-1">
@@ -312,15 +317,17 @@
     <div class="container mx-auto">
         <div class="flex flex-col items-center">
             <h4 class="titulos-1">RESULTADOS DE MUESTREO</h4>
-            <h5 class="subtitulos-1">CERRO PHILIPPI</h5> <!-- Aquí agregar Nombre del Item -->
+            <h5 class="subtitulos-1" >CERRO PHILIPPI</h5> <!-- Aquí agregar Nombre del Item -->
         </div>
     </div>
+	<div id='charthere'></div>
     <div class="container mx-auto my-[80px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
         <div class="flex flex-col">
             <div id='customp' class='allbuttons graphbutton btn-filtro-personalizado-1 font-sora md:py-[10px] 3xl:py-[12px]'>Rango Personalizado</div>
         </div>
     </div>
-    <div class="containermx-auto" style="display: none"> <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
+	
+    <div class="containermx-auto" style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
         <div class="flex flex-row justify-center items-center content-center">
             <div class="md:w-6/12 3xl:w-5/12 flex justify-between items-center content-cente">
                 <label for="startDate" class="font-sora font-light md:text-[16px] 3xl:text-[18px]">Desde:</label>
@@ -331,11 +338,16 @@
             </div>
         </div>
     </div>
+	
     <div class="container mx-auto"> <!--Graficos Chart, por defecto activo tiene que quedar el de Cerro Philippi, despues cambia segun select-->
         <div class="flex flex-row">
             <div class="w-10/12 md:h-[572px] 3xl:h-[612px]">
                 <!-- AQUI VAN LOS GRAFICOS -->
                 <!-- Los graficos tienen que tener una linea constante en 1.000 NMP/100 ml como umbral-->
+                <div id='chartdiv1' class="w-full md:h-[572px] 3xl:h-[612px]"></div>
+                <div id='loader' style="width: 100%;height: 500px;display: flex;">
+                    <img src='assets/img/loading.gif' style='width:70px;margin: auto;'>
+                </div>
             </div>
             <div class="w-2/12 flex flex-col">
                 <div class="box-info">
@@ -345,8 +357,11 @@
                     <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="">
                         <!-- Aquí se tiene que cargar el ultimo muestre-->
                         <div style="width: 100%;height: 100%;display: flex;">
-                            <img src='assets/img/loading.gif' style='width:20px;margin: auto;'>
+                            
+							<img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
+							<div id="coli-value"></div>
                         </div>
+						
                     </div>
                     <div class="datef font-sora font-light text-[10px] pl-[15px]"></div><!--Fecha del ultimo muestreo-->
                 </div>
@@ -375,12 +390,122 @@
 <!------------------------------- GALLERIA ------------------------------->
 <script src="assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
+<script type="text/javascript">
+	
+	function createGraph(since, to, sensor,name) {
+		$('.subtitulos-1').html(name);
+
+		$.ajax({
+			type: "POST",
+			url: "api/getMediciones.php",
+			cache: false,
+			data: {
+				since: since,
+				to: to,
+				sensor: sensor
+			},
+			success: function(output) {
+				try {
+					var data = JSON.parse(output);
+					drawChart(data);
+					$('#loader-label').hide();
+					$('#coli-value').show();	
+					$('#coli-value').html(data.muestras_last + "  NMP/100 ml" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+				} catch (e) {
+					console.log(e);
+				}
+			},
+			error: function(output, e, f) {
+				console.log(e);
+			}
+		});		
+	}
+	
+	function drawChart(data) {
+		
+        am4core.ready(function() {
+
+            // Themes begin
+            am4core.useTheme(am4themes_animated);
+            // Themes end
+
+            // Create chart instance
+            var chart = am4core.create("chartdiv1", am4charts.XYChart);
+            //
+
+            // Increase contrast by taking evey second color
+            chart.colors.step = 2;
+
+            // Add data
+            chart.data = generateChartData(data);
+            $('#chartdiv1').show();
+			
+            $('#loader').hide();
+
+            // Create axes
+            var dateAxis = chart.xAxes.push(new am4charts.DateAxis());
+            dateAxis.renderer.minGridDistance = 50;
+
+            // Create series
+            function createAxisAndSeries(field, name, opposite, bullet) {
+                var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
+                if (chart.yAxes.indexOf(valueAxis) != 0) {
+                    valueAxis.syncWithAxis = chart.yAxes.getIndex(0);
+                }
+
+                var series = chart.series.push(new am4charts.LineSeries());
+                series.dataFields.valueY = field;
+                series.dataFields.dateX = "date";
+                series.strokeWidth = 1.5;
+                series.yAxis = valueAxis;
+                series.name = name;
+                series.tooltipText = "{name}: [bold]{valueY}[/]";
+                series.tensionX = 0.8;
+                series.showOnInit = true;
+
+                var interfaceColors = new am4core.InterfaceColorSet();
+
+                valueAxis.renderer.line.strokeOpacity = 1;
+                valueAxis.renderer.line.strokeWidth = 2;
+                valueAxis.renderer.line.stroke = series.stroke;
+                valueAxis.renderer.labels.template.fill = series.stroke;
+                valueAxis.renderer.opposite = opposite;
+            }
+
+            createAxisAndSeries("values_chart", "COLIFORMES FECALES", false, "circle");
+
+            // Add legend
+            chart.legend = new am4charts.Legend();
+
+            // Add cursor
+            chart.cursor = new am4charts.XYCursor();
+
+            // generate some random data, quite different range
+			
+            function generateChartData(data) {
+				console.log(data);
+                var chartData = [];
+
+                var months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dic'];
+				try {
+					data.label.forEach(function(e, i) {
+						chartData.push({
+							date: e,
+							values_chart: data.muestras[i],
+						});					
+					});
+				} catch (e) {
+					alert("No hay datos para el sensor seleccionado");
+				}
+                return chartData;
+            }
+        }); // end am4core.ready()		
+		
+		
+	}
+</script>
 
 <script>
-    <?php
-
-    ?>
     var map;
 
     function initMap() {
@@ -442,6 +567,39 @@
         }
         ?>
 
+<?php
+        $sql = "SELECT * FROM puntos_mediciones";
+        $result = mysql_query($sql);
+		$i = 0;
+        while ($row = mysql_fetch_assoc($result)) {
+			$i = $row['ID'];
+			echo "var html = \"<a id=''>{$row['Nombre']}</a>\";";
+			echo "var location = new google.maps.LatLng({$row['Lat']}, {$row['Lng']});";
+			echo "var marker$i = new google.maps.Marker({";
+			echo "draggable: false,";
+			echo "map: map,";
+			echo "position: location";
+			echo "});";
+			
+			echo "var infowindow$i = new google.maps.InfoWindow({";
+			echo "content: html";
+			echo "});";
+
+			echo "google.maps.event.addListener(marker$i, 'mouseover', function() {";
+			echo "infowindow$i.open(map, this);";
+			echo "});";		
+			
+			echo "google.maps.event.addListener(marker$i, 'mouseout', function() {";
+			echo "infowindow$i.close(map, this);";
+			echo "});";		
+
+			echo "google.maps.event.addListener(marker$i, 'click', function() {";
+			echo "document.getElementById('charthere').scrollIntoView();";
+			echo "createGraph('2023-01-23','2024-01-25', $i, '{$row['Nombre']}');";
+			echo "});";				
+
+        }
+?>
 
         function placeMarker(location) {
             marker.setPosition(location)
@@ -484,6 +642,13 @@
 
     }
 </script>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
+
+<!------------------------------- GRAPHS ------------------------------->
+<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 
 </body>
 </html>
