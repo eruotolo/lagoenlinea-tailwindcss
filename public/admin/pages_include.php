@@ -60,6 +60,9 @@
 				} else if ($_GET['section'] == "incidentes-edit") {
 					$page = "incidentes-edit.php";
 					$title = "Editar Incidencia";
+				} else if ($_GET['section'] == "lagosinhuella") {
+					$page = "lagosinhuella.php";
+					$title = "Lago sin Huella";
 				}
 
 

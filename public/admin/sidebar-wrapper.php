@@ -96,7 +96,34 @@
     	                <p>Incidencias
     	                </p>
     	            </a>
-    	        </li>				
+    	        </li>	
+				
+				
+    	        <li>
+    	            <a data-toggle="collapse" href="#lsh">
+    	                <i class="pe-7s-global"></i>
+    	                <p>Lago Sin Huella
+    	                    <b class="caret"></b>
+    	                </p>
+    	            </a>
+    	            <div class="collapse" id="lsh">
+    	                <ul class="nav">
+    	                    <li>
+    	                        <a href="index.php?userid=<?php echo $userid ?>&section=lagosinhuella">
+    	                            <span class="sidebar-mini">&nbsp;</span>
+    	                            <span class="sidebar-normal">Puntos de Muestreo</span>
+    	                        </a>
+    	                    </li>
+    	                    <li>
+    	                        <a href="index.php?userid=<?php echo $userid ?>&section=lagosinhuella-biblioteca">
+    	                            <span class="sidebar-mini">&nbsp;</span>
+    	                            <span class="sidebar-normal">Biblioteca</span>
+    	                        </a>
+    	                    </li>
+    	                </ul>
+    	            </div>
+    	        </li>
+				
     	        <li>
     	            <a href="index.php?userid=<?php echo $userid ?>&section=documentos-complementatios">
     	                <i class="pe-7s-news-paper"></i>

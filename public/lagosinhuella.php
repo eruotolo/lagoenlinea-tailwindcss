@@ -344,7 +344,7 @@
             <div class="w-10/12 md:h-[572px] 3xl:h-[612px]">
                 <!-- AQUI VAN LOS GRAFICOS -->
                 <!-- Los graficos tienen que tener una linea constante en 1.000 NMP/100 ml como umbral-->
-                <div id='chartdiv1' class="w-full md:h-[572px] 3xl:h-[612px]"></div>
+                <div id='chartdiv1' style='display:none' class="w-full md:h-[572px] 3xl:h-[612px]"></div>
                 <div id='loader' style="width: 100%;height: 500px;display: flex;">
                     <img src='assets/img/loading.gif' style='width:70px;margin: auto;'>
                 </div>
@@ -365,7 +365,7 @@
                     </div>
                     <div class="datef font-sora font-light text-[10px] pl-[15px]"></div><!--Fecha del ultimo muestreo-->
                 </div>
-                <button class="border-amarillo border-[1px] w-[180px] font-sora font-bold text-[14px] leading-[14px] py-[8px] rounded-[16px] hover:bg-amarillo">
+                <button id='backtomap' class="border-amarillo border-[1px] w-[180px] font-sora font-bold text-[14px] leading-[14px] py-[8px] rounded-[16px] hover:bg-amarillo">
                     VOLVER AL MAPA
                 </button><!--ACA SE CIERRA EL GRAFICO Y POSICIONA EN EL MAPA -->
             </div>
@@ -391,6 +391,8 @@
 <script src="assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <script type="text/javascript">
+
+	
 	
 	function createGraph(since, to, sensor,name) {
 		$('.subtitulos-1').html(name);
@@ -410,7 +412,11 @@
 					drawChart(data);
 					$('#loader-label').hide();
 					$('#coli-value').show();	
-					$('#coli-value').html(data.muestras_last + "  NMP/100 ml" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+					if (data.muestras_last != null) {
+						$('#coli-value').html(data.muestras_last + "  NMP/100 ml" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
+					} else {
+						$('#coli-value').html('No hay informacion');
+					}
 				} catch (e) {
 					console.log(e);
 				}
@@ -641,6 +647,14 @@
         });
 
     }
+</script>
+
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#backtomap').click(function () {
+		document.getElementById('puntos-monitoreo').scrollIntoView();
+	})
+});
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
 
