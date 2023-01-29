@@ -63,6 +63,9 @@
 				} else if ($_GET['section'] == "lagosinhuella") {
 					$page = "lagosinhuella.php";
 					$title = "Lago sin Huella";
+				} else if ($_GET['section'] == "lagosinhuella-mediciones") {
+					$page = "lagosinhuella-mediciones.php";
+					$title = "Lago sin Huella";
 				}
 
 
