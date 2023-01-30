@@ -1,13 +1,19 @@
 # dependencies
-/node_modules
-/.idea
-/src
+node_modules
+src
+.idea
+.DS_Store
+public/admin/include/conf/dbselect.php
 public/token.json
+tailwind.config.js
+package-lock.json
+package.json
+
+# Don't Push DS_Store
 public/.DS_Store
 public/admin/.DS_Store
 public/admin/api/.DS_Store
 public/admin/assets/img/ayuda/.DS_Store
-public/admin/include/conf/dbselect.php
 public/assets/.DS_Store
 public/assets/fonts/.DS_Store
 public/assets/img/.DS_Store
@@ -22,8 +28,3 @@ public/mobile/.DS_Store
 public/mobile/assets/.DS_Store
 public/mobile/assets/img/.DS_Store
 public/mobile/assets/js/.DS_Store
-.DS_Store
-tailwind.config.js
-package-lock.json
-package.json
-.DS_Store
