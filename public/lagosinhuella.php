@@ -317,8 +317,31 @@
     <div class="container mx-auto">
         <div class="flex flex-col items-center">
             <h4 class="titulos-1">RESULTADOS DE MUESTREO</h4>
-            <h5 class="subtitulos-1" >CERRO PHILIPPI</h5> <!-- Aquí agregar Nombre del Item -->
+
+            <select id="countries" class="bg-white subtitulos-1 uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[270px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] ">
+                <option selected>Cerro Philippi</option>
+                <option value="">Santa Rosa Final</option>
+                <option value="">Aliviadero Santa Rosa</option>
+                <option value="">Diego Portales</option>
+                <option value="">Walker Martínez</option>
+                <option value="">Muelle</option>
+                <option value="">Hotel Radisson</option>
+                <option value="">Hotel Bellavista</option>
+                <option value="">Vicente Pérez Rosales</option>
+                <option value="">Antonio Varas</option>
+                <option value="">Eleuterio Ramírez</option>
+                <option value="">Freire</option>
+                <option value="">Aliviadero Pto. Chico</option>
+                <option value="">Quebrada Honda</option>
+                <option value="">Marina de Puerto Varas</option>
+                <option value="">Doña Ema</option>
+            </select>
+
         </div>
+
+
+
+
     </div>
 	<div id='charthere'></div>
     <div class="container mx-auto my-[80px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
