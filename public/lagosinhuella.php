@@ -344,7 +344,7 @@
         </div>
     </div>
 	
-    <div class="containermx-auto" style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
+    <div class="containermx-auto" id='datefilter' style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
         <div class="flex flex-row justify-center items-center content-center">
             <div class="md:w-6/12 3xl:w-5/12 flex justify-between items-center content-cente">
                 <label for="startDate" class="font-sora font-light md:text-[16px] 3xl:text-[18px]">Desde:</label>
@@ -434,11 +434,24 @@
 	$('#puntos').change(function () {
 		var puntoid = $(this).val();
 		createGraph(from,to, puntoid, '');
+	});
+	
+	$('#customp').click(function () {
+		$('#datefilter').show();
+	});
+	
+	$('#filtrarfecha').click(function () {
+		from = $('#startDate').val();
+		to = $('#endDate').val();
+		if (from != null && to != null) {
+			
+		} else {
+			alert("Debes especificar Fecha Desde y Fecha Hasta");
+		}
 	})
 	
 	
 	function createGraph(since, to, sensor,name) {
-		$('.subtitulos-1').html(name);
 
 		$.ajax({
 			type: "POST",
