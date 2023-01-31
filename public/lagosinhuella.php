@@ -1,3 +1,6 @@
+<?php
+	include('admin/include/conf/dbselect.php');
+?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
@@ -318,23 +321,14 @@
         <div class="flex flex-col items-center">
             <h4 class="titulos-1">RESULTADOS DE MUESTREO</h4>
 
-            <select id="countries" class="bg-white subtitulos-1 uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[270px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] ">
-                <option selected>Cerro Philippi</option>
-                <option value="">Santa Rosa Final</option>
-                <option value="">Aliviadero Santa Rosa</option>
-                <option value="">Diego Portales</option>
-                <option value="">Walker Martínez</option>
-                <option value="">Muelle</option>
-                <option value="">Hotel Radisson</option>
-                <option value="">Hotel Bellavista</option>
-                <option value="">Vicente Pérez Rosales</option>
-                <option value="">Antonio Varas</option>
-                <option value="">Eleuterio Ramírez</option>
-                <option value="">Freire</option>
-                <option value="">Aliviadero Pto. Chico</option>
-                <option value="">Quebrada Honda</option>
-                <option value="">Marina de Puerto Varas</option>
-                <option value="">Doña Ema</option>
+            <select id="puntos" class="bg-white uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[270px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] ">
+				 <?php
+						$sql = "SELECT * FROM puntos_mediciones";
+						$result = mysql_query($sql);
+						while ($row = mysql_fetch_assoc($result)) {
+							echo "<option value='{$row['ID']}'>{$row['Nombre']}</option>";
+						}
+				?> 
             </select>
 
         </div>
@@ -415,6 +409,16 @@
 
 <script type="text/javascript">
 
+	var from = '2023-01-23';
+	var to = '2024-01-25';
+	$('#puntos').val(2);
+	createGraph(from,to, 2, '');
+	
+	
+	$('#puntos').change(function () {
+		var puntoid = $(this).val();
+		createGraph(from,to, puntoid, '');
+	})
 	
 	
 	function createGraph(since, to, sensor,name) {
@@ -540,7 +544,7 @@
     function initMap() {
 
         <?php
-        include('admin/include/conf/dbselect.php');
+        
         $sql = "SELECT * FROM ubicacion";
         $result = mysql_query($sql);
         while ($row = mysql_fetch_assoc($result)) {
@@ -624,7 +628,9 @@
 
 			echo "google.maps.event.addListener(marker$i, 'click', function() {";
 			echo "document.getElementById('charthere').scrollIntoView();";
-			echo "createGraph('2023-01-23','2024-01-25', $i, '{$row['Nombre']}');";
+			echo "let element = document.getElementById('puntos');";
+			echo "element.value = 2;";
+			echo "createGraph(from,to, $i, '{$row['Nombre']}');";
 			echo "});";				
 
         }
