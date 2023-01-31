@@ -628,8 +628,7 @@
 
 			echo "google.maps.event.addListener(marker$i, 'click', function() {";
 			echo "document.getElementById('charthere').scrollIntoView();";
-			echo "let element = document.getElementById('puntos');";
-			echo "element.value = 2;";
+			echo "document.querySelector('#puntos').value = '$i';";
 			echo "createGraph(from,to, $i, '{$row['Nombre']}');";
 			echo "});";				
 
