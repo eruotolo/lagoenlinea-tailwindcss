@@ -330,12 +330,8 @@
 						}
 				?> 
             </select>
-
         </div>
-
-
-
-
+        
     </div>
 	<div id='charthere'></div>
     <div class="container mx-auto my-[80px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
@@ -594,7 +590,7 @@
             lat: <?php echo $StadiumLat ?>,
             lng: <?php echo $StadiumLng ?>
         };
-        var myzoom = 14;
+        var myzoom = 15;
         <?php
         } else {
         ?>
