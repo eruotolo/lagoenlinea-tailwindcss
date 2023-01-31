@@ -321,7 +321,7 @@
         <div class="flex flex-col items-center">
             <h4 class="titulos-1">RESULTADOS DE MUESTREO</h4>
 
-            <select id="puntos" class="bg-white uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[270px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] ">
+            <select id="puntos" class="bg-white uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[340px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] text-black font-light md:text-[20px] 3xl:text-[24px] font-sora">
 				 <?php
 						$sql = "SELECT * FROM puntos_mediciones";
 						$result = mysql_query($sql);
@@ -334,7 +334,7 @@
         
     </div>
 	<div id='charthere'></div>
-    <div class="container mx-auto my-[80px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
+    <div class="container mx-auto my-[40px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
         <div class="flex flex-col">
             <div id='customp' class='allbuttons graphbutton btn-filtro-personalizado-1 font-sora md:py-[10px] 3xl:py-[12px]'>Rango Personalizado</div>
         </div>
@@ -357,13 +357,13 @@
             <div class="w-10/12 md:h-[572px] 3xl:h-[612px]">
                 <!-- AQUI VAN LOS GRAFICOS -->
                 <!-- Los graficos tienen que tener una linea constante en 1.000 NMP/100 ml como umbral-->
-                <div id='chartdiv1' style='display:none' class="w-full md:h-[572px] 3xl:h-[612px]"></div>
+                <div id='chartdiv1' style='display:none' class="w-full md:h-[480px] 3xl:h-[560px]"></div>
                 <div id='loader' style="width: 100%;height: 500px;display: flex;">
                     <img src='assets/img/loading.gif' style='width:70px;margin: auto;'>
                 </div>
             </div>
             <div class="w-2/12 flex flex-col">
-                <div class="box-info">
+                <div class="box-info ">
                     <div class="border-b-[1px] border-azul w-[90%] pl-[8px] pt-[6px]">
                         <h6 class="font-sora font-medium text-[12px] leading-[15px]">COLIFORMES FECALES</h6>
                     </div>
@@ -374,7 +374,6 @@
 							<img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
 							<div id="coli-value"></div>
                         </div>
-						
                     </div>
                     <div class="datef font-sora font-light text-[10px] pl-[15px]"></div><!--Fecha del ultimo muestreo-->
                 </div>
@@ -385,7 +384,7 @@
         </div>
     </div>
 
-    <div class="container mx-auto md:pt-[20px]">
+    <div class="container mx-auto md:pt-[10px]">
         <div class="flex flex-row justify-center">
             <a class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="lagosinhuella-informes.php">INFORMES TRIMESTRALES</a>
             <a class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="#">DESCARGAR BASE DE DATOS</a><!--ACA DESCAR EL ARCHIVO EXCEL-->
@@ -590,13 +589,13 @@
             lat: <?php echo $StadiumLat ?>,
             lng: <?php echo $StadiumLng ?>
         };
-        var myzoom = 15;
+        var myzoom = 14.89;
         <?php
         } else {
         ?>
         var myLatLng = {
-            lat: -34.397,
-            lng: 150.644
+            lat: -41.3190811,
+            lng: -72.9661163
         };
         var myzoom = 8;
         <?php
