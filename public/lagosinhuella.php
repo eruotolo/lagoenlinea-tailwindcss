@@ -410,6 +410,7 @@
 <script type="text/javascript">
 
 	var datetoday = new Date();
+	var puntoid;
 	if (datetoday.getMonth()+1 < 10) {
 		var month = "0" + datetoday.getMonth()+1;
 	} else {
@@ -427,12 +428,13 @@
 	
 	var from = dateoneyearagoFormat;
 	var to = datetodayFormat;
-	$('#puntos').val(2);
-	createGraph(from,to, 2, '');
+	puntoid = 2;
+	$('#puntos').val(puntoid);
+	createGraph(from,to, puntoid, '');
 	
 	
 	$('#puntos').change(function () {
-		var puntoid = $(this).val();
+		puntoid = $(this).val();
 		createGraph(from,to, puntoid, '');
 	});
 	
@@ -443,8 +445,12 @@
 	$('#filtrarfecha').click(function () {
 		from = $('#startDate').val();
 		to = $('#endDate').val();
-		if (from != null && to != null) {
-			
+		if (from != null && from != '' && to != null && to != '') {
+			if (from > to) {
+				alert("La fecha Desde debe ser menor o igual a la fecha Hasta");
+			} else {
+				createGraph(from,to, puntoid, '');
+			}
 		} else {
 			alert("Debes especificar Fecha Desde y Fecha Hasta");
 		}
