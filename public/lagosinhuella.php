@@ -409,8 +409,24 @@
 
 <script type="text/javascript">
 
-	var from = '2023-01-23';
-	var to = '2024-01-25';
+	var datetoday = new Date();
+	if (datetoday.getMonth()+1 < 10) {
+		var month = "0" + datetoday.getMonth()+1;
+	} else {
+		var month = datetoday.getMonth()+1;
+	}
+	var datetodayFormat = datetoday.getFullYear() + "-" + (datetoday.getMonth()+1) + "-" + datetoday.getDate();
+	
+	var dateoneyearago = new Date(new Date().setFullYear(new Date().getFullYear() - 1));
+	if (dateoneyearago.getMonth()+1 < 10) {
+		var month = "0" + dateoneyearago.getMonth()+1;
+	} else {
+		var month = dateoneyearago.getMonth()+1;
+	}	
+	var dateoneyearagoFormat = dateoneyearago.getFullYear() + "-" + (dateoneyearago.getMonth()+1) + "-" + dateoneyearago.getDate();
+	
+	var from = dateoneyearagoFormat;
+	var to = datetodayFormat;
 	$('#puntos').val(2);
 	createGraph(from,to, 2, '');
 	
