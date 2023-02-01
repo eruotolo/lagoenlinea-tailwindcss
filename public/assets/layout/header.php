@@ -71,7 +71,7 @@
                             </li><br>
                             <li class="inline-block">
                                 <a class="flex items-center font-blogger text-white font-medium md:text-[16px] 3xl:text-[20px]  md:leading-[22px] 3xl:leading-[26px] border-[1px] border-white rounded-[25px] pb-1 pt-2 px-8 md:mb-2 3xl:mb-4 hover:bg-amarillo hover:border-amarillo"
-                                   href="lagosinhuella.php">LAGO SIN HUELLA</a>
+                                   href="lago-sin-huella.php">LAGO SIN HUELLA</a>
                             </li><br>
                             <li class="inline-block">
                                 <a class="flex items-center font-blogger text-white font-medium md:text-[16px] 3xl:text-[20px]  md:leading-[22px] 3xl:leading-[26px] border-[1px] border-white rounded-[25px] pb-1 pt-2 px-8 md:mb-2 3xl:mb-4 hover:bg-amarillo hover:border-amarillo"
