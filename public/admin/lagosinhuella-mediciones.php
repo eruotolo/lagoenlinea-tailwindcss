@@ -10,12 +10,13 @@
 		<div class="col-md-12">
 			<div class="card ">
 				<div class="header pull-left">
-					<h4 class="title <?php echo $title_color ?>">Puntos de Muestreo</h4>
-					<p class="category"><?php echo $Nombre ?></p>
-					<a href='index.php?userid=<?php echo $userid ?>&section=lagosinhuella'><p class="category"><< Volver</p></a>
+                    <a href='index.php?userid=<?php echo $userid ?>&section=lagosinhuella' style="margin-bottom: 30px; background-color: #1573ac; display: inline-block; padding: 4px 15px 4px 15px; border-radius: 20px "><p class="category" style="color: white">< Volver</p></a>
+					<h4 class="title <?php echo $title_color ?>">Punto de Muestreo</h4>
+					<p class="category" style="font-size: 18px; font-weight: bold; color: #1573ac;"><?php echo $Nombre ?></p>
+
 				</div>
 				<div id="toolbar" class="btn-group pull-right" style='margin:15px'>
-					<a id='addrow' rel="tooltip" title="Crear nuevo" type="button" class="btn btn-warning btn-fill btn-social btn-round" href='#'>
+					<a id='addrow' rel="tooltip" title="Nuevo muestreo" type="button" class="btn btn-warning btn-fill btn-social btn-round" href='#'>
 						<i class="fa fa-plus" style='color:#ffffff'></i>
 					</a>
 				</div>					
@@ -65,7 +66,7 @@ $(document).ready(function(){
 		var valor = $(this).attr('valor');
 		var rowid = $(this).attr('rowid');
 		swal({
-				title: '<div style="background-color:#1573AC;padding:10px 0 10px 0;color:#ffffff"><span style="font-weight:normal">Editar Medicion</span></div>',
+				title: '<div style="background-color:#1573AC;padding:10px 0 10px 0;color:#ffffff"><span style="font-weight:normal">Editar Muestreo</span></div>',
 				html: '<div class="content" style="height:300px">' +
 								'<div class="row" style="margin-top:20px">' +
 									'<div class="col-md-12">' +
@@ -178,7 +179,7 @@ $(document).ready(function(){
 	
 	$('#addrow').click(function () {
 		swal({
-				title: '<div style="background-color:#1573AC;padding:10px 0 10px 0;color:#ffffff"><span style="font-weight:normal">Nueva Medicion</span></div>',
+				title: '<div style="background-color:#1573AC;padding:10px 0 10px 0;color:#ffffff"><span style="font-weight:normal">Nuevo Muestreo</span></div>',
 				html: '<div class="content" style="height:300px">' +
 								'<div class="row" style="margin-top:20px">' +
 									'<div class="col-md-12">' +

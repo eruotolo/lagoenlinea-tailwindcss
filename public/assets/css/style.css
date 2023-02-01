@@ -922,9 +922,9 @@ html {
   margin-right: 5px;
 }
 
-.my-\[80px\] {
-  margin-top: 80px;
-  margin-bottom: 80px;
+.my-\[40px\] {
+  margin-top: 40px;
+  margin-bottom: 40px;
 }
 
 .mx-\[16px\] {
@@ -935,21 +935,6 @@ html {
 .my-\[15px\] {
   margin-top: 15px;
   margin-bottom: 15px;
-}
-
-.my-\[60px\] {
-  margin-top: 60px;
-  margin-bottom: 60px;
-}
-
-.my-\[50px\] {
-  margin-top: 50px;
-  margin-bottom: 50px;
-}
-
-.my-\[40px\] {
-  margin-top: 40px;
-  margin-bottom: 40px;
 }
 
 .mr-\[15px\] {
@@ -3623,8 +3608,8 @@ ul.dashed-1 > li:before {
     padding-top: 60px;
   }
 
-  .md\:pt-\[20px\] {
-    padding-top: 20px;
+  .md\:pt-\[10px\] {
+    padding-top: 10px;
   }
 
   .md\:pt-\[80px\] {
@@ -3633,6 +3618,10 @@ ul.dashed-1 > li:before {
 
   .md\:pr-\[50px\] {
     padding-right: 50px;
+  }
+
+  .md\:pt-\[20px\] {
+    padding-top: 20px;
   }
 
   .md\:pl-\[40px\] {
@@ -3653,10 +3642,6 @@ ul.dashed-1 > li:before {
 
   .md\:pb-\[10px\] {
     padding-bottom: 10px;
-  }
-
-  .md\:pt-\[10px\] {
-    padding-top: 10px;
   }
 
   .md\:pt-\[15px\] {
@@ -3741,10 +3726,6 @@ ul.dashed-1 > li:before {
 
   .md\:leading-\[55px\] {
     line-height: 55px;
-  }
-
-  .md\:text-\[18\] {
-    color: 18;
   }
 }
 

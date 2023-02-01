@@ -188,7 +188,7 @@
     <div class="container mx-auto">
         <div class="flex justify-center">
             <div class="w-8/12 flex justify-center items-center md:h-[165px] 3xl:h-[165px]">
-                <a href="#" class="bg-[#b2efff] text-[#6994bf] font-light rounded-[40px] md:text-[18px] 3xl:text-[20px] md:px-[30px] 3xl:px-[50px] md:py-[3px] 3xl:py-[5px]">Ver resultados de monitoreo</a>
+                <a href="lagosinhuella.php" class="bg-[#b2efff] text-[#6994bf] font-light rounded-[40px] md:text-[18px] 3xl:text-[20px] md:px-[30px] 3xl:px-[50px] md:py-[3px] 3xl:py-[5px]">Ver resultados de monitoreo</a>
             </div>
         </div>
     </div>
