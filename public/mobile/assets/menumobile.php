@@ -37,6 +37,9 @@
 		                    <a class="nav-link" href="incidencias.php">INCIDENCIAS</a>
 	                    </li>
                         <li class="nav-item items-menu">
+                            <a class="nav-link" href="lago-sin-huella.php">LAGO SIN HUELLA</a>
+                        </li>
+                        <li class="nav-item items-menu">
                             <a class="nav-link" href="biblioteca.php">BIBLIOTECA</a>
                         </li>
                         <li class="nav-item items-menu">

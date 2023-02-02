@@ -35,29 +35,29 @@
                                 <li class="nav-item items-menu">
                                     <a class="nav-link" href="proyecto.php">EL PROYECTO</a>
                                 </li>
-	                            <li class="nav-item items-menu dropdown">
-		                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-			                            TECNOLOGÍAS
-		                            </a>
-		                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-			                            <li><a class="dropdown-item" href="monitoreo.php">MONITOREO</a></li>
-			                            <li><a class="dropdown-item" href="teledeteccion.php">TELEDETECCIÓN</a></li>
-			                            <li><a class="dropdown-item" href="metagenomica.php">METAGENÓMICA</a></li>
-		                            </ul>
-	                            </li>
+                                <li class="nav-item items-menu dropdown">
+                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                        TECNOLOGÍAS
+                                    </a>
+                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                        <li><a class="dropdown-item" href="monitoreo.php">MONITOREO</a></li>
+                                        <li><a class="dropdown-item" href="teledeteccion.php">TELEDETECCIÓN</a></li>
+                                        <li><a class="dropdown-item" href="metagenomica.php">METAGENÓMICA</a></li>
+                                    </ul>
+                                </li>
                                 <li class="nav-item items-menu">
                                     <a class="nav-link" href="incidencias.php">INCIDENCIAS</a>
                                 </li>
                                 <li class="nav-item items-menu">
                                     <a class="nav-link" href="lago-sin-huella.php">LAGO SIN HUELLA</a>
                                 </li>
-	                            <li class="nav-item items-menu">
-		                            <a class="nav-link" href="biblioteca.php">BIBLIOTECA</a>
-	                            </li>
+                                <li class="nav-item items-menu">
+                                    <a class="nav-link" href="biblioteca.php">BIBLIOTECA</a>
+                                </li>
                                 <li class="nav-item items-menu">
                                     <a class="nav-link" href="contacto.php">CONTACTO</a>
                                 </li>
-	                            
+
                                 <!-- <li class="nav-item items-menu aporta-info">
                             <a class="nav-link" href="contacto.php">APORTA INFORMACIÓN</a>
                         </li> -->
