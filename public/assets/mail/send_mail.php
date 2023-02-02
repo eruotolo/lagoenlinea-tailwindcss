@@ -1,33 +1,68 @@
 <?php
+/*********************** HARDCODE *****************************************
+$_POST['fname'] = "Nacho";
+$_POST['asunto'] = 'Jaja';
+$_POST['otherField'] = 'Jojo';
+$_POST['email'] = 'nachod@da.com';
+$_POST['comment'] = 'Comment';
+$_POST['subasunto'] = 'subasunto';
+/*****************************************************************************/
+function sendEmailGmail($emailreceiver, $userfullname, $subject, $html, $text, $file, $filename) {
+	
+
+
+	include_once('PhpMailer/PHPMailer.php');
+	include_once('PhpMailer/Exception.php');
+	include_once('PhpMailer/SMTP.php');
+	
+	$mail = new PHPMailer\PHPMailer\PHPMailer();
+	$mail->IsSMTP();
+	$mail->Mailer = "smtp";	
+	
+	$mail->SMTPDebug  = 0;  
+	$mail->SMTPAuth   = TRUE;
+	$mail->SMTPSecure = "tls";
+	$mail->Port       = 587;
+	$mail->Host       = "smtp.gmail.com";
+	$mail->Username   = "facturalive.cfe4@gmail.com";
+	$mail->Password   = "xvbtypbqvaefqfvq";	
+		
+	$mail->IsHTML(true);
+	$mail->AddAddress($emailreceiver, $userfullname);
+	$mail->SetFrom("sender@lagoenlinea.com", "Lago en Linea");
+//	$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
+//	$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
+	$mail->Subject = $subject;
+	//$attachment_content = chunk_split(base64_encode($file));
+	//$mail->addStringAttachment($file,$filename);	
+	$content = $html;
+	$mail->MsgHTML($content); 
+	
+	$result = array();
+	if(!$mail->Send()) {
+	  $result['result'] = 0;
+	  $result['error'] = $mail->ErrorInfo;
+	  return json_encode($result);
+	} else {
+	  $result['result'] = 1;
+	  return json_encode($result);
+	}	
+}
+
 $fname = $_POST['fname'];
-$asunto = $_POST['asunto'];$otherField = $_POST['otherField'];
+$asunto = $_POST['asunto'];
+$otherField = $_POST['otherField'];
 $name = $fname;
 $email = $_POST['email'];
 $html = $_POST['comment'];
 $subasunto = $_POST['subasunto'];
 $message = "Hola,<br/>Asunto: $asunto<br/>Opcion: $subasunto<br/>Name: $name<br/>Email: $email<br/>Message: $html<br/>";	
-//$message = "Hola";
-$email = sendEmail("alberto.fernandez@uss.cl", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
+
+//$email = sendEmail("alberto.fernandez@uss.cl", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
+$email = sendEmailGmail("nachodeleon77@gmail.com", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
 $output['status'] = 1;
 $output['email'] = $email;
 echo json_encode($output);
 
-function sendEmail($emailreceiver, $userfullname, $subject, $html, $text, $file, $filename) {	
-	$apptitle = 'Lago en Linea';		
-	include_once('mailin/Mailin.php');	
-	$mailin = new Mailin('edgardo@indaga.me', 'AYFRpLaw56bgBWJG');	
-	$mailin->addTo($emailreceiver, $userfullname)->
-	setFrom('sender@lagoenlinea.com', $apptitle)->
-	setReplyTo('sender@lagoenlinea.com',$apptitle)->	
-	//setBcc('nachodeleon77@gmail.com')->
-	setSubject($subject)->
-	setText('Comprobante fiscal electronico')->
-	setHtml($html);	
-	//$attachment_content = chunk_split(base64_encode($file));	//
-	$mailin->createAttachment(array("$filename"=>$attachment_content));		
-	$res = $mailin->send();
-	//	unlink($filename);
-	//	echo $res;	return $res;	
-	/*	El mensaje de éxito se enviará de esta forma:	{'result' => true, 'message' => 'E-MAILS enviados'}	*/	
-}
+
 ?>

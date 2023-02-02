@@ -374,7 +374,7 @@
 				draggable: false,
 				map: map,
 				icon: {
-					url: "../asset/img/incidencias/pin-mapa-incidencias.svg",
+					url: "../assets/img/incidencias/pin-mapa-incidencias.svg",
 					scaledSize: new google.maps.Size(39, 72)
 				},
 			});			

@@ -89,7 +89,7 @@
     <div class="container mx-auto md:mb-[80px] md:mt-[60px]">
         <div class="flex flex-col justify-center items-center content-center">
             <div class="w-8/12 bg-azul p-[50px] rounded-[40px]">
-                <form action="#" method="post" id="contact_form">
+                <form id="contact_form">
                     <div class="md:py-[15px]">
                         <input type="text" name="fname" id="fname" placeholder="Nombre Completo" class="w-full font-light md:text-[18px] border-b-[1px] border-white bg-azul px-[10px] py-[4px] placeholder-white text-white" >
                     </div>
@@ -114,7 +114,7 @@
                         <textarea name="comment" id="comment" placeholder="Mensaje" rows="8" class="w-full font-light md:text-[18px] border-b-[1px] border-white bg-azul placeholder-white px-[10px] py-[5px] text-white"></textarea>
                     </div>
                     <div class="md:py-[15px] flex justify-center items-center content-center">
-                        <button id='send_btn' type="submit" class="bg-amarillo text-azul md:text-[18px] md:leading-[18px] px-[30px] pt-[10px] pb-[8px] rounded-[20px] border-[1px] border-amarillo hover:border-[1px] hover:bg-azul hover:border-amarillo hover:text-amarillo">Enviar</button>
+                        <button id='send_btn2' type="submit" class="bg-amarillo text-azul md:text-[18px] md:leading-[18px] px-[30px] pt-[10px] pb-[8px] rounded-[20px] border-[1px] border-amarillo hover:border-[1px] hover:bg-azul hover:border-amarillo hover:text-amarillo">Enviar</button>
                     </div>
                     <div id="message" class="alert alert-danger alert-dismissible fade"></div>
                 </form>
@@ -131,8 +131,65 @@
 
 <!------- JS ENVIAR EMAIL --------->
 <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
-<script src="assets/mail/js/validation.js"></script>
-<script src="assets/js/anotherfield.js"></script>
+<!--script src="assets/mail/js/validation.js"></script-->
+<!--script src="assets/js/anotherfield.js"></script-->
+<script>
+	$("#seeAnotherField").change(function() {
+		if ($(this).val() == "yes") {
+			$('#otherFieldDiv').show();
+			$('#otherField').attr('required', '');
+			$('#otherField').attr('data-error', 'This field is required.');
+		} else {
+			$('#otherFieldDiv').hide();
+			$('#otherField').removeAttr('required');
+			$('#otherField').removeAttr('data-error');
+		}
+	});
+	$("#seeAnotherField").trigger("change");
 
+	$('#send_btn2').click(function() {
+		$('#send_btn2').fadeOut();
+		var fname = $('#fname').val();
+		var email = $('#email').val();
+		var seeAnotherField = $('#seeAnotherField').val();
+		var otherField = $('#otherField').val();
+		var comment = $('#comment').val();
+		var asunto = $('#seeAnotherField option:selected').attr('v');
+		var subasunto = $('#otherField option:selected').attr('v');
+		$.ajax({
+			url: 'assets/mail/send_mail.php',
+			type: 'post',
+			data: {
+				fname: fname,
+				email: email,
+				seeAnotherField: seeAnotherField,
+				otherField: otherField,
+				comment: comment,
+				asunto: asunto,
+				subasunto: subasunto
+			},
+			success: function(response) {
+				console.log(response);
+				var data = JSON.parse(response);
+				if (data.status == 1) {
+					alert("El mensaje fue enviado");
+				} else {
+					alert("El mensaje NO fue enviado");
+				}
+				$('#fname').val('');
+				$('#email').val('');
+				$('#seeAnotherField').val('');
+				$('#otherField').val('');
+				$('#comment').val('');
+				$('#seeAnotherField').val('');	
+				$('#send_btn2').fadeIn();				
+			},
+			error: function(response) {
+				alert("Error");
+			}
+		});
+		return false;
+	})
+</script>
 </body>
 </html>

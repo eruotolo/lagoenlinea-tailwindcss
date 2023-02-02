@@ -201,7 +201,7 @@ if ($_GET['iid'] == '') {
         </div>
     </div>
     <!--------------------- MAPA INICIATIVA --------------------->
-    <div id='mapadiv' class="container mx-auto sectionsdiv" style="display: none">
+    <div id='mapadiv' class="container mx-auto sectionsdiv" style='display:none'>
         <div id="google-map-div" style="width: 100%; height: 600px"></div>
     </div>
     <!--------------------- GRILLA INICIATIVA ------------------->
@@ -442,6 +442,8 @@ if ($_GET['iid'] == '') {
                     map.setZoom(map.getZoom());
                 }
             });
+			
+
 
         });
     </script>
@@ -551,6 +553,7 @@ if ($_GET['iid'] == '') {
     </script>
 
     <script>
+	
         $('#subir').click(function () {
 
             function validateEmail(email)
@@ -647,9 +650,12 @@ if ($_GET['iid'] == '') {
                 contentType: false,
                 processData: false,
                 success: function(output){
+					
                     var data = JSON.parse(output);
                     if (data.status == 1) {
-                        $('#allright').modal('show');
+						alert("La incidencia se cargo correctamente.");
+                        location.reload();
+						//$('#allright').modal('show');
 
                     } else if (data.status == 0) {
                         alert(data.error);
