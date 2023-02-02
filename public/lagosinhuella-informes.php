@@ -1,3 +1,6 @@
+<?php
+	include('admin/include/conf/dbselect.php');
+?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8"> <![endif]-->
@@ -89,57 +92,23 @@
         </div>
     </div>
     <div class="container mx-auto py-[40px]"> <!--SE CARGA CARD DE LOS ARCHIVOS TRIMESTRALES CARGADOS DESDE EL BACK-END - CARGAR 12 ARCHIVOS Y DESPUES PAGINADOR-->
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
-        <div id="card-archivo" class="flex flex-row py-[10px]">
-            <div class="w-2/12 flex justify-end pr-[16px]">
-                <img class="w-[36px]" src="assets/img/lagosinhuella/archivo-down.svg" alt="icono-archivo">
-            </div>
-            <div class="w-10/12 flex items-center">
-                <a class="font-sora underline decoration-solid md:text-[16px]" href="#">Lorem ipsum</a>
-            </div>
-        </div>
+		<?php
+			$sql="SELECT * FROM `lagosinhuella-biblioteca` ORDER BY ID ASC";
+			$result=mysql_query($sql);
+			while ($row = mysql_fetch_assoc($result)) {
+				echo "<div id='card-archivo' class='flex flex-row py-[10px]'>
+						<div class='w-2/12 flex justify-end pr-[16px]'>
+							<img class='w-[36px]' src='assets/img/lagosinhuella/archivo-down.svg' alt='icono-archivo'>
+						</div>
+						<div class='w-10/12 flex items-center'>
+							<a download target='_blank' class='font-sora underline decoration-solid md:text-[16px]' href='admin/api/{$row['ArchivoDescargar']}'>{$row['Titulo']}</a>
+						</div>
+					</div>";
+			}
+		?>
     </div>
 
-    <div class="flex flex-row paginador justify-center mt-[40px]">
+    <div class="flex flex-row paginador justify-center mt-[40px]" style='display:none'>
         <nav aria-label="Page navigation example">
             <ul class="pagination justify-content-center list-none flex">
 

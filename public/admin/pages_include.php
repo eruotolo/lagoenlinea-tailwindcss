@@ -66,6 +66,15 @@
         } else if ($_GET['section'] == "lagosinhuella-mediciones") {
             $page = "lagosinhuella-mediciones.php";
             $title = "Lago sin Huella";
+        } else if ($_GET['section'] == "lagosinhuella-biblioteca") {
+            $page = "lagosinhuella-biblioteca.php";
+            $title = "Lago sin Huella: Biblioteca";
+        } else if ($_GET['section'] == "lagosinhuella-biblioteca-add") {
+            $page = "lagosinhuella-biblioteca-add.php";
+            $title = "Lago sin Huella: Biblioteca";
+        } else if ($_GET['section'] == "lagosinhuella-biblioteca-edit") {
+            $page = "lagosinhuella-biblioteca-edit.php";
+            $title = "Lago sin Huella: Biblioteca";
         }
 
     } else {
