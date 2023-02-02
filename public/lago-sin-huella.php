@@ -387,9 +387,63 @@
     <div class="container mx-auto md:pt-[10px]">
         <div class="flex flex-row justify-center">
             <a class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="lagosinhuella-informes.php">INFORMES TRIMESTRALES</a>
-            <a class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="#">DESCARGAR BASE DE DATOS</a><!--ACA DESCAR EL ARCHIVO EXCEL-->
+            <a id='exportexcel' class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="#">DESCARGAR BASE DE DATOS</a><!--ACA DESCAR EL ARCHIVO EXCEL-->
         </div>
     </div>
+	<table>
+	<?php
+		$sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);	
+		
+		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM lago.puntos_muestras
+				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
+				order by DATE_FORMAT(`Fecha`,'%Y - %M')";
+        $result = mysql_query($sql);
+		$months = array();
+
+        while ($row = mysql_fetch_assoc($result)) {
+			$m = $row['month'];
+			$months[$m] = $row['monthname'];
+		}
+		
+		$mediciones = array();
+		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+				FROM puntos_muestras";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$PuntoID = $row['PuntoID'];
+			$month = $row['month'];
+			$mediciones[$PuntoID][$month] = $row['Valor'];
+		}
+		
+		$puntos = array();
+		$sql = "SELECT * FROM puntos_mediciones";
+        $result = mysql_query($sql);
+        while ($row = mysql_fetch_assoc($result)) {
+			$ID = $row['ID'];
+			$Nombre = $row['Nombre'];
+			$puntos[$ID] = $Nombre;
+		}	
+		echo "<table id='table' style='display:none'>";
+		echo "<tr>";
+		echo "<td><b>Estacion</b></td>";
+		foreach ($months as $key1=>$month) {
+			echo "<td><b>{$month}</b></td>";
+		}		
+		echo "</tr>";
+		
+		foreach ($puntos as $key=>$punto) {
+			echo "<tr>";
+			echo "<td>{$punto}</td>";
+			foreach ($months as $key1=>$month) {				
+				echo "<td>{$mediciones[$key][$key1]}</td>";
+			}
+			echo "</tr>";
+		}
+		echo "</table>";
+	?>
+	</table>
 
 
 </section>
@@ -706,12 +760,19 @@
 
     }
 </script>
-
+<script src="assets/js/exportexcel/excelexportjs.js"></script>
 <script type="text/javascript">
 $(document).ready(function() {
 	$('#backtomap').click(function () {
 		document.getElementById('puntos-monitoreo').scrollIntoView();
 	})
+	
+	$('#exportexcel').on('click', function() {
+		$("#table").excelexportjs({
+			containerid: "table",
+			datatype: 'table'
+		});
+	});	
 });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
