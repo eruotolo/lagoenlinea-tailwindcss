@@ -427,6 +427,15 @@
 		}	
 		echo "<table id='table' style='display:none'>";
 		echo "<tr>";
+		echo "<td><b>Monitoreo Lago sin Huella: Bahia de Puerto Varas</b></td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td><b>Indicador: Coliformes Fecales (NMP/100ML)</b></td>";
+		echo "</tr>";
+		echo "<tr>";
+		echo "<td>&nbsp;</td>";
+		echo "</tr>";		
+		echo "<tr>";
 		echo "<td><b>Estacion</b></td>";
 		foreach ($months as $key1=>$month) {
 			echo "<td><b>{$month}</b></td>";
