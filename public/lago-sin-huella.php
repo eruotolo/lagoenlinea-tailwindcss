@@ -530,6 +530,7 @@
 				sensor: sensor
 			},
 			success: function(output) {
+				console.log(output);
 				try {
 					var data = JSON.parse(output);
 					drawChart(data);
@@ -576,7 +577,7 @@
             dateAxis.renderer.minGridDistance = 50;
 
             // Create series
-            function createAxisAndSeries(field, name, opposite, bullet) {
+            function createAxisAndSeries(field, field2, name, opposite, bullet) {
                 var valueAxis = chart.yAxes.push(new am4charts.ValueAxis());
                 if (chart.yAxes.indexOf(valueAxis) != 0) {
                     valueAxis.syncWithAxis = chart.yAxes.getIndex(0);
@@ -591,6 +592,16 @@
                 series.tooltipText = "{name}: [bold]{valueY}[/]";
                 series.tensionX = 0.8;
                 series.showOnInit = true;
+				
+                var series2 = chart.series.push(new am4charts.LineSeries());
+                series2.dataFields.valueY = field2;
+                series2.dataFields.dateX = "date";
+                series2.strokeWidth = 1.5;
+                series2.yAxis = valueAxis;
+                series2.name = name;
+                series2.tooltipText = "{name}: [bold]{valueY}[/]";
+                series2.tensionX = 0.8;
+                series2.showOnInit = true;				
 
                 var interfaceColors = new am4core.InterfaceColorSet();
 
@@ -601,8 +612,8 @@
                 valueAxis.renderer.opposite = opposite;
             }
 
-            createAxisAndSeries("values_chart", "COLIFORMES FECALES", false, "circle");
-
+            createAxisAndSeries("values_chart", "values_const_chart", "COLIFORMES FECALES", false, "circle");
+			//createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
             // Add legend
             chart.legend = new am4charts.Legend();
 
@@ -621,7 +632,8 @@
 						chartData.push({
 							date: e,
 							values_chart: data.muestras[i],
-						});					
+							values_const_chart: data.muestras_constant[i],
+						});							
 					});
 				} catch (e) {
 					alert("No hay datos para el sensor seleccionado");
