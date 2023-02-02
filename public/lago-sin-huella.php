@@ -75,7 +75,10 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NKZ9BW4');
     </script>
     <!-- End Google Tag Manager -->
-
+	<!------------------------------- GRAPHS ------------------------------->
+	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 </head>
 <body>
 
@@ -786,10 +789,6 @@ $(document).ready(function() {
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
 
-<!------------------------------- GRAPHS ------------------------------->
-<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 
 
 </body>
