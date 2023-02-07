@@ -598,7 +598,7 @@
                 series2.dataFields.dateX = "date";
                 series2.strokeWidth = 1.5;
                 series2.yAxis = valueAxis;
-                series2.name = name;
+                series2.name = "Umbral 1.000 NMP/100 ml";
                 series2.tooltipText = "{name}: [bold]{valueY}[/]";
                 series2.tensionX = 0.8;
                 series2.showOnInit = true;				
@@ -614,7 +614,7 @@
 
             createAxisAndSeries("values_chart", "values_const_chart", "MUETRA DE COLIFORME", false, "circle");
 			//createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
-            //createAxisAndSeries("saturation_chart","values_const_chart", "SATURACIÓN", true, "triangle");
+			
             // Add legend
             chart.legend = new am4charts.Legend();
 
@@ -633,8 +633,13 @@
 						chartData.push({
 							date: e,
 							values_chart: data.muestras[i],
+							//values_const_chart: data.muestras_constant[i],
+						});	
+						chartData.push({
+							date: e,
+							//values_chart: data.muestras[i],
 							values_const_chart: data.muestras_constant[i],
-						});							
+						});						
 					});
 				} catch (e) {
 					alert("No hay datos para el sensor seleccionado");
