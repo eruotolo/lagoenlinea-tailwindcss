@@ -612,8 +612,9 @@
                 valueAxis.renderer.opposite = opposite;
             }
 
-            createAxisAndSeries("values_chart", "values_const_chart", "COLIFORMES FECALES", false, "circle");
+            createAxisAndSeries("values_chart", "values_const_chart", "MUETRA DE COLIFORME", false, "circle");
 			//createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
+            //createAxisAndSeries("saturation_chart","values_const_chart", "SATURACIÓN", true, "triangle");
             // Add legend
             chart.legend = new am4charts.Legend();
 

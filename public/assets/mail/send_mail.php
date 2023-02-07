@@ -59,7 +59,7 @@ $subasunto = $_POST['subasunto'];
 $message = "Hola,<br/>Asunto: $asunto<br/>Opcion: $subasunto<br/>Name: $name<br/>Email: $email<br/>Message: $html<br/>";	
 
 //$email = sendEmail("alberto.fernandez@uss.cl", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
-$email = sendEmailGmail("nachodeleon77@gmail.com", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
+$email = sendEmailGmail("edgardoruotolo@gmail.com", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
 $output['status'] = 1;
 $output['email'] = $email;
 echo json_encode($output);
