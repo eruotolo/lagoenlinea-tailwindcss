@@ -4,7 +4,7 @@
 	$userid = $_POST['userid'];
 	$query0 = mysql_query("UPDATE `users`
 								SET
-								`admin` = 0
+								`onlymuestras` = 0
 								WHERE `user_id` = $id;
 								") or die(mysql_error());		
 

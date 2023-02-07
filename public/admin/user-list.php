@@ -36,10 +36,15 @@
 														} else {
 															$iconadmin = "<i class='fa fa-star-o text-warning makeadmin' admin='{$row['admin']}' valid='{$row['user_id']}' rel='tooltip' title='$lng_make_admin'></i>";
 														}
+														if ($row['onlymuestras'] == 1) {
+															$icononlymuestra = "<i class='fa fa-vcard text-warning makeonlymuestra' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
+														} else {
+															$icononlymuestra = "<i class='fa fa-vcard-o text-warning makeonlymuestra' onlymuestra='{$row['onlymuestras']}' valid='{$row['user_id']}' rel='tooltip' title='Usuario: LagoSinHuella'></i>";
+														}														
 													echo "<tr>
 																<td></td>
 																<td>{$row['user_id']}</td>
-																<td>$iconadmin</td>
+																<td>$iconadmin {$icononlymuestra}</td>
 																<td>{$row['firstname']} {$row['lastname']}</td>
 																<td>{$row['email']}</td>
 																<td>{$row['lastlogin']}</td>
@@ -232,6 +237,7 @@
 							i.removeClass("fa-star-o");
 							i.addClass("fa-star");
 							i.attr('admin',1);
+							location.reload();						
 						}
 						});
 					} else {
@@ -243,12 +249,43 @@
 						success: function(output){
 							i.removeClass("fa-star");
 							i.addClass("fa-star-o");
-							i.attr('admin',0);							
+							i.attr('admin',0);		
+							location.reload();
 						}
 						});						
 					}
 					
 			});
-			
+			$(".makeonlymuestra").click(function() {
+					var i = $(this);
+					if ($(this).attr('onlymuestra') == 0) {
+						$.ajax({
+						type: "POST",
+						url: "jquery/makeonlymuestra.php",
+						data: {id: $(this).attr('valid'), userid: 1},
+						cache: false,
+						success: function(output){						
+							i.removeClass("fa-vcard-o");
+							i.addClass("fa-vcard");
+							i.attr('onlymuestra',1);
+							location.reload();
+						}
+						});
+					} else {
+						$.ajax({
+						type: "POST",
+						url: "jquery/unmakeonlymuestra.php",
+						data: {id: $(this).attr('valid'), userid: 1},
+						cache: false,
+						success: function(output){
+							i.removeClass("fa-vcard");
+							i.addClass("fa-vcard-o");
+							i.attr('onlymuestra',0);
+							location.reload();							
+						}
+						});						
+					}
+					
+			});			
 	});
     </script>			

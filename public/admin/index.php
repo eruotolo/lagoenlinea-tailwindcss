@@ -157,7 +157,13 @@
 			</a>			
 			
         </div>
-		<?php include ('sidebar-wrapper.php')?>
+		<?php 
+			if ($onlymuestras == 0) {
+				include ('sidebar-wrapper.php');
+			} else {
+				include ('sidebar-wrapper-lagosinhuella.php');
+			}
+		?>
 	</div>
 
     <div class="main-panel">

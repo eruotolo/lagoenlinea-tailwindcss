@@ -4,8 +4,9 @@
 	$userid = $_POST['userid'];
 	$query0 = mysql_query("UPDATE `users`
 								SET
-								`admin` = 1
-								WHERE `user_id` = $id AND `UserID` = $userid;
+								`admin` = 1,
+								`onlymuestras` = 0
+								WHERE `user_id` = $id;
 								") or die(mysql_error());		
 
 		

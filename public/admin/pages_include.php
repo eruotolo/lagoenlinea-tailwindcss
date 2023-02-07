@@ -78,7 +78,13 @@
         }
 
     } else {
-        $page = "dashboard.php";
-        $title = "$lng_dashboard";
+		if ($onlymuestras == 0) {
+			$page = "dashboard.php";
+			$title = "$lng_dashboard";
+		} else {
+			$page = "lagosinhuella.php";
+			$title = "$lng_dashboard";
+		}		
+
 }
 ?>

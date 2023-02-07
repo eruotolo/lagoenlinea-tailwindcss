@@ -21,6 +21,7 @@ if ($userid <> '') {
 		$service_radio = $row['service_radio'];
 		$mainuserid = $row['UserID'];
 		$admin = $row['admin'];
+		$onlymuestras = $row['onlymuestras'];
 	}
 
 	$sql="UPDATE users SET lastlogin = NOW() WHERE user_id ='{$_GET[userid]}'";
