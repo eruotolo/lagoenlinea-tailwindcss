@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../proyecto.php";
+        }
+    </script>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,7 +51,7 @@
 	<!-- GALLERIA -->
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" rel="stylesheet">
-	<link href="asset/css/gallery-grid.css" rel="stylesheet">
+	<link href="assets/css/gallery-grid.css" rel="stylesheet">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN0M278PRJ"></script>
@@ -219,10 +228,10 @@
 
 <!-- Option 3: Other JS -->
 <script src="assets/js/change.js"></script>
-<script src="../asset/js/monitor.js"></script>
+<script src="../assets/js/monitor.js"></script>
 
 <!-- GALLERIA -->
-<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 <!-- GALLERIA -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 

@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../llanquihue.php";
+        }
+    </script>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -35,7 +44,7 @@
 	<!-- GALLERIA -->
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" rel="stylesheet">
-	<link href="asset/css/gallery-grid.css" rel="stylesheet">
+	<link href="assets/css/gallery-grid.css" rel="stylesheet">
 	
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -265,63 +274,63 @@
 				<div class="tz-gallery galleria-lago">
 					<div class="row">
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_01.jpg">
-								<img src="../asset/img/gallery/lagolinea_01.jpg" alt="Park" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_01.jpg">
+								<img src="../assets/img/gallery/lagolinea_01.jpg" alt="Park" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_02.jpg">
-								<img src="../asset/img/gallery/lagolinea_02.jpg" alt="Bridge" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_02.jpg">
+								<img src="../assets/img/gallery/lagolinea_02.jpg" alt="Bridge" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_03.jpg">
-								<img src="../asset/img/gallery/lagolinea_03.jpg" alt="Tunnel" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_03.jpg">
+								<img src="../assets/img/gallery/lagolinea_03.jpg" alt="Tunnel" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_04.jpg">
-								<img src="../asset/img/gallery/lagolinea_04.jpg" alt="Coast" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_04.jpg">
+								<img src="../assets/img/gallery/lagolinea_04.jpg" alt="Coast" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_05.jpg">
-								<img src="../asset/img/gallery/lagolinea_05.jpg" alt="Rails" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_05.jpg">
+								<img src="../assets/img/gallery/lagolinea_05.jpg" alt="Rails" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_06.jpg">
-								<img src="../asset/img/gallery/lagolinea_06.jpg" alt="Traffic" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_06.jpg">
+								<img src="../assets/img/gallery/lagolinea_06.jpg" alt="Traffic" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_07.jpg">
-								<img src="../asset/img/gallery/lagolinea_07.jpg" alt="Rocks" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_07.jpg">
+								<img src="../assets/img/gallery/lagolinea_07.jpg" alt="Rocks" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_08.jpg">
-								<img src="../asset/img/gallery/lagolinea_08.jpg" alt="Benches" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_08.jpg">
+								<img src="../assets/img/gallery/lagolinea_08.jpg" alt="Benches" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_09.jpg">
-								<img src="../asset/img/gallery/lagolinea_09.jpg" alt="Sky" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_09.jpg">
+								<img src="../assets/img/gallery/lagolinea_09.jpg" alt="Sky" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_10.jpg">
-								<img src="../asset/img/gallery/lagolinea_10.jpg" alt="Sky" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_10.jpg">
+								<img src="../assets/img/gallery/lagolinea_10.jpg" alt="Sky" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_11.jpg">
-								<img src="../asset/img/gallery/lagolinea_11.jpg" alt="Sky" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_11.jpg">
+								<img src="../assets/img/gallery/lagolinea_11.jpg" alt="Sky" class="img-fluid">
 							</a>
 						</div>
 						<div class="col-6 dist-gallery">
-							<a class="lightbox" href="../asset/img/gallery/lagolinea_12.jpg">
-								<img src="../asset/img/gallery/lagolinea_12.jpg" alt="Sky" class="img-fluid">
+							<a class="lightbox" href="../assets/img/gallery/lagolinea_12.jpg">
+								<img src="../assets/img/gallery/lagolinea_12.jpg" alt="Sky" class="img-fluid">
 							</a>
 						</div>
 					</div>
@@ -353,10 +362,10 @@
 
 <!-- Option 3: Other JS -->
 <script src="assets/js/change.js"></script>
-<script src="../asset/js/monitor.js"></script>
+<script src="../assets/js/monitor.js"></script>
 
 <!-- GALLERIA -->
-<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 <!-- GALLERIA -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>
 

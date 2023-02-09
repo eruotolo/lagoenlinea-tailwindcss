@@ -1057,6 +1057,10 @@ html {
   margin-top: 0.5rem;
 }
 
+.mt-\[15px\] {
+  margin-top: 15px;
+}
+
 .block {
   display: block;
 }
@@ -1193,6 +1197,14 @@ html {
   height: 0.25rem;
 }
 
+.h-\[120px\] {
+  height: 120px;
+}
+
+.h-auto {
+  height: auto;
+}
+
 .w-4 {
   width: 1rem;
 }
@@ -1253,18 +1265,6 @@ html {
   width: 58.333333%;
 }
 
-.w-2\/12 {
-  width: 16.666667%;
-}
-
-.w-\[36px\] {
-  width: 36px;
-}
-
-.w-10\/12 {
-  width: 83.333333%;
-}
-
 .w-\[350px\] {
   width: 350px;
 }
@@ -1285,12 +1285,24 @@ html {
   width: 30px;
 }
 
+.w-10\/12 {
+  width: 83.333333%;
+}
+
+.w-2\/12 {
+  width: 16.666667%;
+}
+
 .w-\[90\%\] {
   width: 90%;
 }
 
 .w-\[180px\] {
   width: 180px;
+}
+
+.w-\[36px\] {
+  width: 36px;
 }
 
 .w-\[50\%\] {
@@ -1343,6 +1355,10 @@ html {
 
 .w-44 {
   width: 11rem;
+}
+
+.w-\[96\%\] {
+  width: 96%;
 }
 
 .max-w-6xl {
@@ -1518,6 +1534,10 @@ html {
 
 .rounded-full {
   border-radius: 9999px;
+}
+
+.rounded-\[26px\] {
+  border-radius: 26px;
 }
 
 .border-\[1px\] {
@@ -1848,11 +1868,6 @@ html {
   padding-right: 10%;
 }
 
-.py-\[40px\] {
-  padding-top: 40px;
-  padding-bottom: 40px;
-}
-
 .px-\[12px\] {
   padding-left: 12px;
   padding-right: 12px;
@@ -1866,6 +1881,11 @@ html {
 .px-\[40px\] {
   padding-left: 40px;
   padding-right: 40px;
+}
+
+.py-\[40px\] {
+  padding-top: 40px;
+  padding-bottom: 40px;
 }
 
 .px-2 {
@@ -3215,11 +3235,6 @@ ul.dashed-1 > li:before {
     margin-right: 10px;
   }
 
-  .md\:my-\[60px\] {
-    margin-top: 60px;
-    margin-bottom: 60px;
-  }
-
   .md\:my-\[30px\] {
     margin-top: 30px;
     margin-bottom: 30px;
@@ -3228,6 +3243,11 @@ ul.dashed-1 > li:before {
   .md\:my-\[50px\] {
     margin-top: 50px;
     margin-bottom: 50px;
+  }
+
+  .md\:my-\[60px\] {
+    margin-top: 60px;
+    margin-bottom: 60px;
   }
 
   .md\:mx-\[4px\] {
@@ -3423,6 +3443,14 @@ ul.dashed-1 > li:before {
     height: 1.5rem;
   }
 
+  .md\:h-\[90\%\] {
+    height: 90%;
+  }
+
+  .md\:h-\[94\%\] {
+    height: 94%;
+  }
+
   .md\:w-auto {
     width: auto;
   }
@@ -3493,6 +3521,26 @@ ul.dashed-1 > li:before {
 
   .md\:w-6 {
     width: 1.5rem;
+  }
+
+  .md\:max-w-2xl {
+    max-width: 42rem;
+  }
+
+  .md\:max-w-3xl {
+    max-width: 48rem;
+  }
+
+  .md\:max-w-4xl {
+    max-width: 56rem;
+  }
+
+  .md\:max-w-5xl {
+    max-width: 64rem;
+  }
+
+  .md\:max-w-6xl {
+    max-width: 72rem;
   }
 
   .md\:py-\[50px\] {
@@ -4024,6 +4072,10 @@ ul.dashed-1 > li:before {
 
   .\33xl\:w-\[66px\] {
     width: 66px;
+  }
+
+  .\33xl\:max-w-6xl {
+    max-width: 72rem;
   }
 
   .\33xl\:py-\[100px\] {

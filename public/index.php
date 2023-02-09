@@ -15,8 +15,8 @@
     </script>
 
     <meta charset="UTF-8">
-    <meta content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
-          name="viewport">
+    <!--<meta content="width=device-width, user-scalable=yes, initial-scale=1.0, maximum-scale=5.0, minimum-scale=1.0"
+          name="viewport">-->
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
     <title>Lago en Línea</title>
