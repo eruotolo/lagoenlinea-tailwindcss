@@ -4,6 +4,16 @@
 	include('../admin/include/conf/dbselect.php');
 ?>
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../incidencias.php";
+        }
+    </script>
+
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,7 +46,7 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 	
 	<!-- GALLERIA -->
-	<link rel="stylesheet" href="../asset/dist/css/lightbox.min.css">
+	<link rel="stylesheet" href="../assets/dist/css/lightbox.min.css">
 	
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -487,7 +497,7 @@
 						draggable: false,
 						map: map,
 						icon: {
-							url: "../asset/img/incidencias/pin-mapa-incidencias.svg",
+							url: "../assets/img/incidencias/pin-mapa-incidencias.svg",
 							scaledSize: new google.maps.Size(39, 72)
 						},
 					});
@@ -532,7 +542,7 @@
 						draggable: false,
 						map: map1,
 						icon: {
-							url: "../asset/img/incidencias/pin-mapa-incidencias.svg",
+							url: "../assets/img/incidencias/pin-mapa-incidencias.svg",
 							scaledSize: new google.maps.Size(39, 72)
 						},
 					});
@@ -707,7 +717,7 @@
 						draggable: false,
 						map: map,
 						icon: {
-							url: "../asset/img/incidencias/pin-mapa-incidencias.svg",
+							url: "../assets/img/incidencias/pin-mapa-incidencias.svg",
 							scaledSize: new google.maps.Size(39, 72)
 						},
 					});
@@ -724,10 +734,10 @@
 	
 	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
 	
-	<script src="../asset/js/monitor.js"></script>
+	<script src="../assets/js/monitor.js"></script>
 	
 	<!-- GALLERIA -->
-	<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+	<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
 </body>
 

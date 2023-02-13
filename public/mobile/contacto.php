@@ -2,6 +2,15 @@
 <html lang="es">
 
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../contacto.php";
+        }
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -152,7 +161,7 @@
     <!-- Option 3: Other JS -->
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.2/js/bootstrapValidator.min.js"></script>
     
-    <script src="../asset/mail/js/validation.js"></script>
+    <script src="../assets/mail/js/validation.js"></script>
 
     <script>
 	    $("#seeAnotherField").change(function() {
@@ -178,7 +187,7 @@
 		    var asunto = $('#seeAnotherField option:selected').attr('v');
 		    var subasunto = $('#otherField option:selected').attr('v');
 		    $.ajax({
-			    url: '../asset/mail/send_mail.php',
+			    url: '../assets/mail/send_mail.php',
 			    type: 'post',
 			    data: {
 				    fname: fname,

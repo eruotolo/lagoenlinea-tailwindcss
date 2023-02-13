@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../teledeteccion.php";
+        }
+    </script>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,12 +49,12 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 	
 	<!-- GALLERIA 01 -->
-	<link rel="stylesheet" href="../asset/dist/css/lightbox.min.css">
+	<link rel="stylesheet" href="../assets/dist/css/lightbox.min.css">
 	
 	<!-- GALLERIA 02 -->
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" rel="stylesheet">
-	<link href="asset/css/gallery-grid.css" rel="stylesheet">
+	<link href="assets/css/gallery-grid.css" rel="stylesheet">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN0M278PRJ"></script>
@@ -133,13 +142,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-01.png" data-lightbox="example-set" data-title="Fotografía de la Tierra desde el espacio"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-01-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-01.png" data-lightbox="example-set" data-title="Fotografía de la Tierra desde el espacio"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-01-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-02.jpeg" data-lightbox="example-set" data-title="Satélite orbitando la Tierra"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-02-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-02.jpeg" data-lightbox="example-set" data-title="Satélite orbitando la Tierra"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-02-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-03.jpeg" data-lightbox="example-set" data-title="Imagen satelital del lago Llanquihue"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-03-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-03.jpeg" data-lightbox="example-set" data-title="Imagen satelital del lago Llanquihue"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-03-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -167,13 +176,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-04.png" data-lightbox="example-set" data-title="Concentración de material en suspensión en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-04-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-04.png" data-lightbox="example-set" data-title="Concentración de material en suspensión en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-04-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-05.png" data-lightbox="example-set" data-title="Concentración de clorofila en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-05-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-05.png" data-lightbox="example-set" data-title="Concentración de clorofila en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-05-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-06.png" data-lightbox="example-set" data-title="Coeficiente de atenuación difusa en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-06-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-06.png" data-lightbox="example-set" data-title="Coeficiente de atenuación difusa en el lago Llanquihue (dic. 2021)"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-06-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -220,7 +229,7 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-12 item-gallery">
-									<a class="example-image-link" href="../asset/img/teledeteccion/img-teledetecion-07.jpg" data-lightbox="example-set" data-title="Árbol de decisión para la determinación de satélite a utilizar para el monitoreo en el lago Llanquihue"><img class="example-image img-fluid" src="../asset/img/teledeteccion/img-teledetecion-07.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/teledeteccion/img-teledetecion-07.jpg" data-lightbox="example-set" data-title="Árbol de decisión para la determinación de satélite a utilizar para el monitoreo en el lago Llanquihue"><img class="example-image img-fluid" src="../assets/img/teledeteccion/img-teledetecion-07.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -562,7 +571,7 @@
 </script>
 
 <!-- GALLERIA 01 -->
-<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <!-- GALLERIA 02 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>

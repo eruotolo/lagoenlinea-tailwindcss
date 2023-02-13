@@ -58,7 +58,7 @@ $html = $_POST['comment'];
 $subasunto = $_POST['subasunto'];
 $message = "Hola,<br/>Asunto: $asunto<br/>Opcion: $subasunto<br/>Name: $name<br/>Email: $email<br/>Message: $html<br/>";	
 
-//$email = sendEmail("alberto.fernandez@uss.cl", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
+//$email = sendEmail("alberto.fernandez@uss.cl", $fname, "Mensaje enviado desde el formulario de contacto Lago En Línea", $message, $message, $file, $filename);
 $email = sendEmailGmail("edgardoruotolo@gmail.com", $fname, "Se envio un mensaje por la pagina", $message, $message, $file, $filename);
 $output['status'] = 1;
 $output['email'] = $email;

@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../monitoreo.php";
+        }
+    </script>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -41,7 +50,7 @@
 	
 	
 	<!-- GALLERIA -->
-	<link rel="stylesheet" href="../asset/dist/css/lightbox.min.css">
+	<link rel="stylesheet" href="../assets/dist/css/lightbox.min.css">
 	
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
@@ -128,13 +137,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-01.jpeg" data-lightbox="example-set" data-title="Estación de monitoreo en la bahía de Puerto Varas."><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-01-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-01.jpeg" data-lightbox="example-set" data-title="Estación de monitoreo en la bahía de Puerto Varas."><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-01-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-02.jpeg" data-lightbox="example-set" data-title="Esquema de instalación de la Estación de monitoreo."><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-02-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-02.jpeg" data-lightbox="example-set" data-title="Esquema de instalación de la Estación de monitoreo."><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-02-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-03.png" data-lightbox="example-set" data-title="Estación de monitoreo."><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-03-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-03.png" data-lightbox="example-set" data-title="Estación de monitoreo."><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-03-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -199,13 +208,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-04.jpeg" data-lightbox="example-set" data-title="Sensores de la Estación de monitoreo."><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-04-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-04.jpeg" data-lightbox="example-set" data-title="Sensores de la Estación de monitoreo."><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-04-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-05.png" data-lightbox="example-set" data-title="Instalación de la Estación de monitoreo en la bahía de Puerto Varas"><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-05-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-05.png" data-lightbox="example-set" data-title="Instalación de la Estación de monitoreo en la bahía de Puerto Varas"><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-05-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/monitoreo/img-monitoreo-06.png" data-lightbox="example-set" data-title="Luz de señalización"><img class="example-image img-fluid" src="../asset/img/monitoreo/img-monitoreo-06-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/monitoreo/img-monitoreo-06.png" data-lightbox="example-set" data-title="Luz de señalización"><img class="example-image img-fluid" src="../assets/img/monitoreo/img-monitoreo-06-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -235,13 +244,13 @@
 		<div class="row">
 			<div class="col-12 text-center">
 				<div id='chartdiv' style='display:none;height: 450px;padding-top: 20px;'></div>
-				<div id='loader' style="width: 100%;height: 250px;display: flex;"><img src='../asset/img/loading.gif' style='width:40px;margin: auto;'></div>
+				<div id='loader' style="width: 100%;height: 250px;display: flex;"><img src='../assets/img/loading.gif' style='width:40px;margin: auto;'></div>
 			</div>
 		</div>
 		<div class="row">
 			<div class="col-12 text-center">
 				<div id='chartdiv2' style='display:none;height: 450px;padding-left: 20px;padding-top: 40px;padding-bottom: 40px;'></div>
-				<div id='loader2' style="width: 100%;height: 250px;display: flex;"><img src='../asset/img/loading.gif' style='width:40px;margin: auto;'></div>
+				<div id='loader2' style="width: 100%;height: 250px;display: flex;"><img src='../assets/img/loading.gif' style='width:40px;margin: auto;'></div>
 			</div>
 		</div>
 		<div class="row">
@@ -250,7 +259,7 @@
 					<h6>OXÍGENO</h6>
 				</div>
 				<div class="box-cont" id="oxygen">
-					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../asset/img/loading.gif' style='width:20px;margin: auto;'></div>
+					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../assets/img/loading.gif' style='width:20px;margin: auto;'></div>
 				</div>
 			</div>
 			<div class="box-info">
@@ -258,7 +267,7 @@
 					<h6>SATURACIÓN</h6>
 				</div>
 				<div class="box-cont" id="saturation">
-					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../asset/img/loading.gif' style='width:20px;margin: auto;'></div>
+					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../assets/img/loading.gif' style='width:20px;margin: auto;'></div>
 				</div>
 			</div>
 			<div class="box-info">
@@ -266,7 +275,7 @@
 					<h6>TEMPERATURA</h6>
 				</div>
 				<div class="box-cont" id="temperature">
-					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../asset/img/loading.gif' style='width:20px;margin: auto;'></div>
+					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../assets/img/loading.gif' style='width:20px;margin: auto;'></div>
 				</div>
 			</div>
 		
@@ -277,7 +286,7 @@
 					<h6>CONDUCTIVIDAD</h6>
 				</div>
 				<div class="box-cont" id="conductividad">
-					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../asset/img/loading.gif' style='width:20px;margin: auto;'></div>
+					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../assets/img/loading.gif' style='width:20px;margin: auto;'></div>
 				</div>
 			</div>
 			<div class="box-info">
@@ -285,7 +294,7 @@
 					<h6>TURBIDEZ</h6>
 				</div>
 				<div class="box-cont" id="turvidity">
-					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../asset/img/loading.gif' style='width:20px;margin: auto;'></div>
+					<div style="width: 100%;height: 100%;display: flex; margin-top: 10px"><img src='../assets/img/loading.gif' style='width:20px;margin: auto;'></div>
 				</div>
 			</div>
 			<!--<div class="box-btn">
@@ -320,7 +329,7 @@
 <!-- Option 3: Other JS -->
 <script src="assets/js/change.js"></script>
 
-<script src="../asset/js/exportexcel/excelexportjs.js"></script>
+<script src="../assets/js/exportexcel/excelexportjs.js"></script>
 
 
 <!-- GRAPHICS -->
@@ -1017,7 +1026,7 @@
 			draggable: false,
 			map: map,
 			icon: {
-				url: "../asset/img/icono-boya.svg",
+				url: "../assets/img/icono-boya.svg",
 				scaledSize: new google.maps.Size(39, 72)
 			},
 		});
@@ -1078,7 +1087,7 @@
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
 
 <!-- GALLERIA -->
-<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <script>
 	$(document).on('click', function() {

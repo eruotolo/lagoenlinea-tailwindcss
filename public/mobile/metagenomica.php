@@ -1,6 +1,15 @@
 <!doctype html>
 <html lang="es">
 <head>
+    <!-- DETECTA MOBILE -->
+    <script type="text/javascript">
+        let dispositivo = navigator.userAgent.toLowerCase();
+        if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
+            // No hacer nada.
+        }else{
+            document.location = "../metagenomica.php";
+        }
+    </script>
 	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,12 +49,12 @@
 	<link href="assets/css/style.css" rel="stylesheet">
 	
 	<!-- GALLERIA 01 -->
-	<link rel="stylesheet" href="../asset/dist/css/lightbox.min.css">
+	<link rel="stylesheet" href="../assets/dist/css/lightbox.min.css">
 	
 	<!-- GALLERIA 02 -->
 	<link href="https://fonts.googleapis.com/css?family=Droid+Sans:400,700" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.css" rel="stylesheet">
-	<link href="asset/css/gallery-grid.css" rel="stylesheet">
+	<link href="assets/css/gallery-grid.css" rel="stylesheet">
 	
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EN0M278PRJ"></script>
@@ -131,13 +140,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-01.jpeg" data-lightbox="example-set" data-title="Muestra de agua"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-01-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-01.jpeg" data-lightbox="example-set" data-title="Muestra de agua"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-01-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-02.jpeg" data-lightbox="example-set" data-title="Análisis de laboratorio de muestras de agua"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-02-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-02.jpeg" data-lightbox="example-set" data-title="Análisis de laboratorio de muestras de agua"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-02-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-03.jpeg" data-lightbox="example-set" data-title="Imagen referencial de microorganismos"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-03-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-03.jpeg" data-lightbox="example-set" data-title="Imagen referencial de microorganismos"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-03-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -168,13 +177,13 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-04.jpeg" data-lightbox="example-set" data-title="Cultivo de microorganismos"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-04-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-04.jpeg" data-lightbox="example-set" data-title="Cultivo de microorganismos"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-04-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-05.jpeg" data-lightbox="example-set" data-title="Abundancia relativa de microorganismos según filo bacteriano en 4 muestras de agua de la bahía de Puerto Varas (oct. 2020"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-05-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-05.jpeg" data-lightbox="example-set" data-title="Abundancia relativa de microorganismos según filo bacteriano en 4 muestras de agua de la bahía de Puerto Varas (oct. 2020"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-05-1.jpg" alt=""/></a>
 								</div>
 								<div class="col-4 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-06.jpeg" data-lightbox="example-set" data-title="Proporción de bacterias de origen ambiental vs. antropogénicas en 4 muestras de agua de la bahía de Puerto Varas (oct. 2020)"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-06-1.jpg" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-06.jpeg" data-lightbox="example-set" data-title="Proporción de bacterias de origen ambiental vs. antropogénicas en 4 muestras de agua de la bahía de Puerto Varas (oct. 2020)"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-06-1.jpg" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -204,7 +213,7 @@
 						<div class="col-12 new-opcion-text opcion-proyecto gallery">
 							<div class="row">
 								<div class="col-12 item-gallery">
-									<a class="example-image-link" href="../asset/img/metagenomica/img-metagenomica-07.png" data-lightbox="example-set" data-title="Comparación de procesos de análisis tradicional de muestras de agua vs. metagenómica"><img class="example-image img-fluid" src="../asset/img/metagenomica/img-metagenomica-07.png" alt=""/></a>
+									<a class="example-image-link" href="../assets/img/metagenomica/img-metagenomica-07.png" data-lightbox="example-set" data-title="Comparación de procesos de análisis tradicional de muestras de agua vs. metagenómica"><img class="example-image img-fluid" src="../assets/img/metagenomica/img-metagenomica-07.png" alt=""/></a>
 								</div>
 							</div>
 						</div>
@@ -534,7 +543,7 @@
 </script>
 
 <!-- GALLERIA 01 -->
-<script src="../asset/dist/js/lightbox-plus-jquery.min.js"></script>
+<script src="../assets/dist/js/lightbox-plus-jquery.min.js"></script>
 
 <!-- GALLERIA 02 -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.8.1/baguetteBox.min.js"></script>

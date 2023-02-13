@@ -107,7 +107,7 @@ if ($_GET['iid'] == '') {
     <!-- MODAL - Dirígete a las instituciones pertinentes  -->
 
     <div id="large-modal" tabindex="-1" class="fixed top-0 left-0 right-0 z-50 hidden w-full overflow-x-hidden overflow-y-auto md:inset-0 h-modal md:h-full">
-        <div class="relative w-full h-full max-w-6xl md:h-auto">
+        <div class="relative w-full h-full md:max-w-5xl 3xl:max-w-6xl md:h-[94%]">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow-lg">
                 <!-- Modal header -->
@@ -119,7 +119,7 @@ if ($_GET['iid'] == '') {
                 </div>
                 <!-- Modal body -->
                 <div class="px-[50px] grid grid-cols-2">
-                    <div>
+                    <div class="px-[15px]">
                         <p class="text-[18px] font-normal pt-[20px]">Superintendencia de Medio Ambiente (SMA)</p>
                         <ul class="dashed-1 pl-[15px]">
                             <li class="text-[14px] font-light">Descarga de residuos líquidos contraviniendo alguna normativa de emisión o calidad de aguas.</li>
@@ -148,7 +148,7 @@ if ($_GET['iid'] == '') {
                             <li class="text-[14px] font-light">Uso de pesticidas y fertilizantes.</li>
                         </ul>
                     </div>
-                    <div>
+                    <div class="px-[15px]">
                         <p class="text-[18px] font-normal pt-[16px]">Corporación Nacional Forestal (CONAF)</p>
                         <ul class="dashed-1 pl-[15px]">
                             <li class="text-[14px] font-light">Corte de vegetación.</li>
@@ -309,7 +309,7 @@ if ($_GET['iid'] == '') {
             </div>
         </div>
         <div class="flex flex-row justify-between px-[30px] py-[30px]">
-            <a href='#' class='backincidentes bg-amarillo md:text-[16px] md:leading-[16px] 3xl:text-[18px] 3xl:leading-[18px] w-[120px] pt-[8px] pb-[6px] rounded-[20px] text-white text-center border-[1px] border-amarillo hover:bg-white hover:text-oscuro'>VOLVER</a>
+            <a href='#' class='backincidentes bg-amarillo md:text-[16px] md:leading-[20px] 3xl:text-[18px] 3xl:leading-[20px] w-[120px] pt-[8px] pb-[6px] rounded-[20px] text-white text-center border-[1px] border-amarillo hover:bg-white hover:text-oscuro'>VOLVER</a>
             <button id='subir' class="bg-azul md:text-[16px] md:leading-[16px] 3xl:text-[18px] 3xl:leading-[18px] w-[120px] py-[8px] rounded-[20px] text-white border-[1px] border-azul hover:bg-white hover:text-azul">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 inline-block">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
@@ -354,27 +354,27 @@ if ($_GET['iid'] == '') {
                 <p class="md:text-[16px] md:leading-[16px] 3xl:text-[18px] 3xl:leading-[18px] md:py-[8px] 3xl:py-[10px]"><b>Descripción:</b></p>
                 <div class="cat-descripcion md:text-[16px] md:leading-[22px] 3xl:text-[18px] 3xl:leading-[26px] "><?php echo $Descripcion ?></div>
 
-                <div class="grid grid-cols-3">
+                <div class="grid grid-cols-3 mt-[20px]">
                     <?php
                     if ($File1 <> '') {
-                        echo "<a class='example-image-link' href='api/$File1'  data-lightbox='example-set'><img src='api/$File1' style='object-fit: contain;width:100%;height:200px'></a>";
+                        echo "<a class='example-image-link object-cover' href='api/$File1'  data-lightbox='example-set'><img src='api/$File1' style='object-fit: contain' class='object-cover w-[96%] h-auto'></a>";
                     }
                     ?>
                     <?php
                     if ($File2 <> '') {
-                        echo "<a class='example-image-link' href='api/$File2' data-lightbox='example-set'><img src='api/$File2' style='object-fit: contain;width:100%;height:200px'></a>";
+                        echo "<a class='example-image-link object-cover' href='api/$File2' data-lightbox='example-set'><img src='api/$File2' style='object-fit: contain' class='object-cover w-[96%] h-auto'></a>";
                     }
                     ?>
                     <?php
                     if ($File3 <> '') {
-                        echo "<a class='example-image-link' href='api/$File3' data-lightbox='example-set'><img src='api/$File3' style='object-fit: contain;width:100%;height:200px'></a>";
+                        echo "<a class='example-image-link object-cover' href='api/$File3' data-lightbox='example-set'><img src='api/$File3' style='object-fit: contain' class='object-cover w-[96%] h-auto'></a>";
                     }
                     ?>
                 </div>
             </div>
         </div>
         <div class="flex flex-row">
-            <a href='#' id='backlink' class="border-[1px] border-amarillo md:text-[18px] md:leading-[18px] 3xl:text-[20px] 3xl:leading-[20px] md:w-[100px] 3xl:w-[120px] text-center rounded-[20px] md:py-[8px] 3xl:py-[10px] hover:bg-amarillo">
+            <a href='#' id='backlink' class="border-[1px] border-amarillo md:text-[18px] md:leading-[18px] 3xl:text-[20px] 3xl:leading-[20px] md:w-[100px] 3xl:w-[120px] text-center rounded-[20px] md:py-[8px] 3xl:py-[10px] hover:bg-amarillo mt-[20px]">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 inline-block">
                     <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
                 </svg>

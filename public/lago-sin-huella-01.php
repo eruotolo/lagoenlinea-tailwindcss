@@ -1,5 +1,5 @@
 <?php
-	include('admin/include/conf/dbselect.php');
+include('admin/include/conf/dbselect.php');
 ?>
 <!doctype html>
 <!--[if lt IE 7]><html class="no-js lt-ie10 lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
@@ -27,11 +27,11 @@
     <!-- CSS PERSONALIZADO -->
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/dist/css/lightbox.min.css">
-	<style>
-		.gm-ui-hover-effect {
-			display: none !important;
-		}
-	</style>
+    <style>
+        .gm-ui-hover-effect {
+            display: none !important;
+        }
+    </style>
 
     <!-- SEO ORGANICO -->
     <meta http-equiv="content-Type" content="text/html; ISO-8859-1">
@@ -75,10 +75,10 @@
         })(window, document, 'script', 'dataLayer', 'GTM-NKZ9BW4');
     </script>
     <!-- End Google Tag Manager -->
-	<!------------------------------- GRAPHS ------------------------------->
-	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
-	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
-	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+    <!------------------------------- GRAPHS ------------------------------->
+    <script src="https://cdn.amcharts.com/lib/4/core.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
+    <script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
 </head>
 <body>
 
@@ -325,24 +325,24 @@
             <h4 class="titulos-1">RESULTADOS DE MUESTREO</h4>
 
             <select id="puntos" class="bg-white uppercase text-center border border-gray-300 text-gray-900 rounded-[20px] focus:ring-azul focus:border-azul block md:w-[340px] 3xl:w-[380px] mt-[10px] py-[2px] px-[10px] text-black font-light md:text-[20px] 3xl:text-[24px] font-sora">
-				 <?php
-						$sql = "SELECT * FROM puntos_mediciones";
-						$result = mysql_query($sql);
-						while ($row = mysql_fetch_assoc($result)) {
-							echo "<option value='{$row['ID']}'>{$row['Nombre']}</option>";
-						}
-				?> 
+                <?php
+                $sql = "SELECT * FROM puntos_mediciones";
+                $result = mysql_query($sql);
+                while ($row = mysql_fetch_assoc($result)) {
+                    echo "<option value='{$row['ID']}'>{$row['Nombre']}</option>";
+                }
+                ?>
             </select>
         </div>
-        
+
     </div>
-	<div id='charthere'></div>
+    <div id='charthere'></div>
     <div class="container mx-auto my-[40px]"><!-- Boton filtro personalizado, filtro oculto (display) -->
         <div class="flex flex-col">
             <div id='customp' class='allbuttons graphbutton btn-filtro-personalizado-1 font-sora md:py-[10px] 3xl:py-[12px]'>Rango Personalizado</div>
         </div>
     </div>
-	
+
     <div class="containermx-auto" id='datefilter' style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
         <div class="flex flex-row justify-center items-center content-center">
             <div class="md:w-6/12 3xl:w-5/12 flex justify-between items-center content-cente">
@@ -354,7 +354,7 @@
             </div>
         </div>
     </div>
-	
+
     <div class="container mx-auto"> <!--Graficos Chart, por defecto activo tiene que quedar el de Cerro Philippi, despues cambia segun select-->
         <div class="flex flex-row">
             <div class="w-10/12 md:h-[572px] 3xl:h-[612px]">
@@ -373,9 +373,9 @@
                     <div class="font-light md:text-[14px] 3xl:text-[16px] md:leading-[20px] 3xl:leading-[30px] pl-[15px] pt-[5px]" id="">
                         <!-- Aquí se tiene que cargar el ultimo muestre-->
                         <div style="width: 100%;height: 100%;display: flex;">
-                            
-							<img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
-							<div id="coli-value"></div>
+
+                            <img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
+                            <div id="coli-value"></div>
                         </div>
                     </div>
                     <div class="datef font-sora font-light text-[10px] pl-[15px]"></div><!--Fecha del ultimo muestreo-->
@@ -393,69 +393,69 @@
             <a id='exportexcel' class="font-sora font-bold md:text-[14px] md:leading-[14px] 3xl:text-[16px] 3xl:leading-[16px] border-[1px] border-amarillo bg-amarillo px-[40px] py-[10px] rounded-[20px] mx-[16px] hover:bg-white" href="#">DESCARGAR BASE DE DATOS</a><!--ACA DESCAR EL ARCHIVO EXCEL-->
         </div>
     </div>
-	<table>
-	<?php
-		$sql = "SET lc_time_names = 'es_ES';";
-        $result = mysql_query($sql);	
-		
-		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
-				FROM puntos_muestras
+    <table>
+        <?php
+        $sql = "SET lc_time_names = 'es_ES';";
+        $result = mysql_query($sql);
+
+        $sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
+				FROM lago.puntos_muestras
 				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
 				order by DATE_FORMAT(`Fecha`,'%Y - %M')";
         $result = mysql_query($sql);
-		$months = array();
+        $months = array();
 
         while ($row = mysql_fetch_assoc($result)) {
-			$m = $row['month'];
-			$months[$m] = $row['monthname'];
-		}
-		
-		$mediciones = array();
-		$sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
+            $m = $row['month'];
+            $months[$m] = $row['monthname'];
+        }
+
+        $mediciones = array();
+        $sql = "SELECT *, CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month'
 				FROM puntos_muestras";
         $result = mysql_query($sql);
         while ($row = mysql_fetch_assoc($result)) {
-			$PuntoID = $row['PuntoID'];
-			$month = $row['month'];
-			$mediciones[$PuntoID][$month] = $row['Valor'];
-		}
-		
-		$puntos = array();
-		$sql = "SELECT * FROM puntos_mediciones";
+            $PuntoID = $row['PuntoID'];
+            $month = $row['month'];
+            $mediciones[$PuntoID][$month] = $row['Valor'];
+        }
+
+        $puntos = array();
+        $sql = "SELECT * FROM puntos_mediciones";
         $result = mysql_query($sql);
         while ($row = mysql_fetch_assoc($result)) {
-			$ID = $row['ID'];
-			$Nombre = $row['Nombre'];
-			$puntos[$ID] = $Nombre;
-		}	
-		echo "<table id='table' style='display:none'>";
-		echo "<tr>";
-		echo "<td><b>Monitoreo Lago sin Huella: Bahia de Puerto Varas</b></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td><b>Indicador: Coliformes Fecales (NMP/100ML)</b></td>";
-		echo "</tr>";
-		echo "<tr>";
-		echo "<td>&nbsp;</td>";
-		echo "</tr>";		
-		echo "<tr>";
-		echo "<td><b>Estacion</b></td>";
-		foreach ($months as $key1=>$month) {
-			echo "<td><b>{$month}</b></td>";
-		}		
-		echo "</tr>";
-		
-		foreach ($puntos as $key=>$punto) {
-			echo "<tr>";
-			echo "<td>{$punto}</td>";
-			foreach ($months as $key1=>$month) {				
-				echo "<td>{$mediciones[$key][$key1]}</td>";
-			}
-			echo "</tr>";
-		}
-		echo "</table>";
-	?>
-	</table>
+            $ID = $row['ID'];
+            $Nombre = $row['Nombre'];
+            $puntos[$ID] = $Nombre;
+        }
+        echo "<table id='table' style='display:none'>";
+        echo "<tr>";
+        echo "<td><b>Monitoreo Lago sin Huella: Bahia de Puerto Varas</b></td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td><b>Indicador: Coliformes Fecales (NMP/100ML)</b></td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td>&nbsp;</td>";
+        echo "</tr>";
+        echo "<tr>";
+        echo "<td><b>Estacion</b></td>";
+        foreach ($months as $key1=>$month) {
+            echo "<td><b>{$month}</b></td>";
+        }
+        echo "</tr>";
+
+        foreach ($puntos as $key=>$punto) {
+            echo "<tr>";
+            echo "<td>{$punto}</td>";
+            foreach ($months as $key1=>$month) {
+                echo "<td>{$mediciones[$key][$key1]}</td>";
+            }
+            echo "</tr>";
+        }
+        echo "</table>";
+        ?>
+    </table>
 
 
 </section>
@@ -470,89 +470,89 @@
 
 <script type="text/javascript">
 
-	var datetoday = new Date();
-	var puntoid;
-	if (datetoday.getMonth()+1 < 10) {
-		var month = "0" + datetoday.getMonth()+1;
-	} else {
-		var month = datetoday.getMonth()+1;
-	}
-	var datetodayFormat = datetoday.getFullYear() + "-" + (datetoday.getMonth()+1) + "-" + datetoday.getDate();
-	
-	var dateoneyearago = new Date(new Date().setFullYear(new Date().getFullYear() - 1));
-	if (dateoneyearago.getMonth()+1 < 10) {
-		var month = "0" + dateoneyearago.getMonth()+1;
-	} else {
-		var month = dateoneyearago.getMonth()+1;
-	}	
-	var dateoneyearagoFormat = dateoneyearago.getFullYear() + "-" + (dateoneyearago.getMonth()+1) + "-" + dateoneyearago.getDate();
-	
-	var from = dateoneyearagoFormat;
-	var to = datetodayFormat;
-	puntoid = 2;
-	$('#puntos').val(puntoid);
-	createGraph(from,to, puntoid, '');
-	
-	
-	$('#puntos').change(function () {
-		puntoid = $(this).val();
-		createGraph(from,to, puntoid, '');
-	});
-	
-	$('#customp').click(function () {
-		$('#datefilter').show();
-	});
-	
-	$('#filtrarfecha').click(function () {
-		from = $('#startDate').val();
-		to = $('#endDate').val();
-		if (from != null && from != '' && to != null && to != '') {
-			if (from > to) {
-				alert("La fecha Desde debe ser menor o igual a la fecha Hasta");
-			} else {
-				createGraph(from,to, puntoid, '');
-			}
-		} else {
-			alert("Debes especificar Fecha Desde y Fecha Hasta");
-		}
-	})
-	
-	
-	function createGraph(since, to, sensor,name) {
+    var datetoday = new Date();
+    var puntoid;
+    if (datetoday.getMonth()+1 < 10) {
+        var month = "0" + datetoday.getMonth()+1;
+    } else {
+        var month = datetoday.getMonth()+1;
+    }
+    var datetodayFormat = datetoday.getFullYear() + "-" + (datetoday.getMonth()+1) + "-" + datetoday.getDate();
 
-		$.ajax({
-			type: "POST",
-			url: "api/getMediciones.php",
-			cache: false,
-			data: {
-				since: since,
-				to: to,
-				sensor: sensor
-			},
-			success: function(output) {
-				console.log(output);
-				try {
-					var data = JSON.parse(output);
-					drawChart(data);
-					$('#loader-label').hide();
-					$('#coli-value').show();	
-					if (data.muestras_last != null) {
-						$('#coli-value').html(data.muestras_last + "  NMP/100 ml" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");					
-					} else {
-						$('#coli-value').html('No hay informacion');
-					}
-				} catch (e) {
-					console.log(e);
-				}
-			},
-			error: function(output, e, f) {
-				console.log(e);
-			}
-		});		
-	}
-	
-	function drawChart(data) {
-		
+    var dateoneyearago = new Date(new Date().setFullYear(new Date().getFullYear() - 1));
+    if (dateoneyearago.getMonth()+1 < 10) {
+        var month = "0" + dateoneyearago.getMonth()+1;
+    } else {
+        var month = dateoneyearago.getMonth()+1;
+    }
+    var dateoneyearagoFormat = dateoneyearago.getFullYear() + "-" + (dateoneyearago.getMonth()+1) + "-" + dateoneyearago.getDate();
+
+    var from = dateoneyearagoFormat;
+    var to = datetodayFormat;
+    puntoid = 2;
+    $('#puntos').val(puntoid);
+    createGraph(from,to, puntoid, '');
+
+
+    $('#puntos').change(function () {
+        puntoid = $(this).val();
+        createGraph(from,to, puntoid, '');
+    });
+
+    $('#customp').click(function () {
+        $('#datefilter').show();
+    });
+
+    $('#filtrarfecha').click(function () {
+        from = $('#startDate').val();
+        to = $('#endDate').val();
+        if (from != null && from != '' && to != null && to != '') {
+            if (from > to) {
+                alert("La fecha Desde debe ser menor o igual a la fecha Hasta");
+            } else {
+                createGraph(from,to, puntoid, '');
+            }
+        } else {
+            alert("Debes especificar Fecha Desde y Fecha Hasta");
+        }
+    })
+
+
+    function createGraph(since, to, sensor,name) {
+
+        $.ajax({
+            type: "POST",
+            url: "api/getMediciones.php",
+            cache: false,
+            data: {
+                since: since,
+                to: to,
+                sensor: sensor
+            },
+            success: function(output) {
+                console.log(output);
+                try {
+                    var data = JSON.parse(output);
+                    drawChart(data);
+                    $('#loader-label').hide();
+                    $('#coli-value').show();
+                    if (data.muestras_last != null) {
+                        $('#coli-value').html(data.muestras_last + "  NMP/100 ml" + "<br><small>Fecha: " + data.muestras_last_fecha + "</small>");
+                    } else {
+                        $('#coli-value').html('No hay informacion');
+                    }
+                } catch (e) {
+                    console.log(e);
+                }
+            },
+            error: function(output, e, f) {
+                console.log(e);
+            }
+        });
+    }
+
+    function drawChart(data) {
+
         am4core.ready(function() {
 
             // Themes begin
@@ -569,7 +569,7 @@
             // Add data
             chart.data = generateChartData(data);
             $('#chartdiv1').show();
-			
+
             $('#loader').hide();
 
             // Create axes
@@ -592,16 +592,16 @@
                 series.tooltipText = "{name}: [bold]{valueY}[/]";
                 series.tensionX = 0.8;
                 series.showOnInit = true;
-				
+
                 var series2 = chart.series.push(new am4charts.LineSeries());
                 series2.dataFields.valueY = field2;
                 series2.dataFields.dateX = "date";
                 series2.strokeWidth = 1.5;
                 series2.yAxis = valueAxis;
-                series2.name = "UMBRAL 1.000 NMP/100 ml";
+                series2.name = name;
                 series2.tooltipText = "{name}: [bold]{valueY}[/]";
                 series2.tensionX = 0.8;
-                series2.showOnInit = true;				
+                series2.showOnInit = true;
 
                 var interfaceColors = new am4core.InterfaceColorSet();
 
@@ -613,8 +613,8 @@
             }
 
             createAxisAndSeries("values_chart", "values_const_chart", "MUETRA DE COLIFORME", false, "circle");
-			//createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
-			
+            //createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
+            //createAxisAndSeries("saturation_chart","values_const_chart", "SATURACIÓN", true, "triangle");
             // Add legend
             chart.legend = new am4charts.Legend();
 
@@ -622,34 +622,29 @@
             chart.cursor = new am4charts.XYCursor();
 
             // generate some random data, quite different range
-			
+
             function generateChartData(data) {
-				console.log(data);
+                console.log(data);
                 var chartData = [];
 
                 var months = ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Set', 'Oct', 'Nov', 'Dic'];
-				try {
-					data.label.forEach(function(e, i) {
-						chartData.push({
-							date: e,
-							values_chart: data.muestras[i],
-							//values_const_chart: data.muestras_constant[i],
-						});	
-						chartData.push({
-							date: e,
-							//values_chart: data.muestras[i],
-							values_const_chart: data.muestras_constant[i],
-						});						
-					});
-				} catch (e) {
-					alert("No hay datos para el sensor seleccionado");
-				}
+                try {
+                    data.label.forEach(function(e, i) {
+                        chartData.push({
+                            date: e,
+                            values_chart: data.muestras[i],
+                            values_const_chart: data.muestras_constant[i],
+                        });
+                    });
+                } catch (e) {
+                    alert("No hay datos para el sensor seleccionado");
+                }
                 return chartData;
             }
-        }); // end am4core.ready()		
-		
-		
-	}
+        }); // end am4core.ready()
+
+
+    }
 </script>
 
 <script>
@@ -658,7 +653,7 @@
     function initMap() {
 
         <?php
-        
+
         $sql = "SELECT * FROM ubicacion";
         $result = mysql_query($sql);
         while ($row = mysql_fetch_assoc($result)) {
@@ -714,40 +709,40 @@
         }
         ?>
 
-<?php
+        <?php
         $sql = "SELECT * FROM puntos_mediciones";
         $result = mysql_query($sql);
-		$i = 0;
+        $i = 0;
         while ($row = mysql_fetch_assoc($result)) {
-			$i = $row['ID'];
-			echo "var html = \"<a id=''>{$row['Nombre']}</a>\";";
-			echo "var location = new google.maps.LatLng({$row['Lat']}, {$row['Lng']});";
-			echo "var marker$i = new google.maps.Marker({";
-			echo "draggable: false,";
-			echo "map: map,";
-			echo "position: location";
-			echo "});";
-			
-			echo "var infowindow$i = new google.maps.InfoWindow({";
-			echo "content: html";
-			echo "});";
+            $i = $row['ID'];
+            echo "var html = \"<a id=''>{$row['Nombre']}</a>\";";
+            echo "var location = new google.maps.LatLng({$row['Lat']}, {$row['Lng']});";
+            echo "var marker$i = new google.maps.Marker({";
+            echo "draggable: false,";
+            echo "map: map,";
+            echo "position: location";
+            echo "});";
 
-			echo "google.maps.event.addListener(marker$i, 'mouseover', function() {";
-			echo "infowindow$i.open(map, this);";
-			echo "});";		
-			
-			echo "google.maps.event.addListener(marker$i, 'mouseout', function() {";
-			echo "infowindow$i.close(map, this);";
-			echo "});";		
+            echo "var infowindow$i = new google.maps.InfoWindow({";
+            echo "content: html";
+            echo "});";
 
-			echo "google.maps.event.addListener(marker$i, 'click', function() {";
-			echo "document.getElementById('charthere').scrollIntoView();";
-			echo "document.querySelector('#puntos').value = '$i';";
-			echo "createGraph(from,to, $i, '{$row['Nombre']}');";
-			echo "});";				
+            echo "google.maps.event.addListener(marker$i, 'mouseover', function() {";
+            echo "infowindow$i.open(map, this);";
+            echo "});";
+
+            echo "google.maps.event.addListener(marker$i, 'mouseout', function() {";
+            echo "infowindow$i.close(map, this);";
+            echo "});";
+
+            echo "google.maps.event.addListener(marker$i, 'click', function() {";
+            echo "document.getElementById('charthere').scrollIntoView();";
+            echo "document.querySelector('#puntos').value = '$i';";
+            echo "createGraph(from,to, $i, '{$row['Nombre']}');";
+            echo "});";
 
         }
-?>
+        ?>
 
         function placeMarker(location) {
             marker.setPosition(location)
@@ -792,18 +787,18 @@
 </script>
 <script src="assets/js/exportexcel/excelexportjs.js"></script>
 <script type="text/javascript">
-$(document).ready(function() {
-	$('#backtomap').click(function () {
-		document.getElementById('puntos-monitoreo').scrollIntoView();
-	})
-	
-	$('#exportexcel').on('click', function() {
-		$("#table").excelexportjs({
-			containerid: "table",
-			datatype: 'table'
-		});
-	});	
-});
+    $(document).ready(function() {
+        $('#backtomap').click(function () {
+            document.getElementById('puntos-monitoreo').scrollIntoView();
+        })
+
+        $('#exportexcel').on('click', function() {
+            $("#table").excelexportjs({
+                containerid: "table",
+                datatype: 'table'
+            });
+        });
+    });
 </script>
 <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAnydyACjDEVvZCe2B3zs23KyD_Yf5YWIw&libraries=places&callback=initMap" async defer></script>
 
