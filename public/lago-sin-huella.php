@@ -79,6 +79,7 @@
 	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
+
 </head>
 <body>
 
@@ -88,7 +89,6 @@
 
 <!------------------------------- IN CABEZAL DE LA PAGINA ------------------------------>
 <?php include('assets/layout/header-lsh.php') ?>
-<?php include('assets/layout/menustick.php') ?>
 <!----------------------------- END CABEZAL DE LA PAGINA ------------------------------->
 
 <section class="bg-inicio-01 bg-no-repeat bg-cover bg-bottom md:h-[1000px] 3xl:h-[1086px]">
@@ -161,9 +161,9 @@
         <!------------------------- ITEMS ACORDION 1 ---------------------------->
         <div class="container mx-auto md:pt-[40px] 3xl:pt-[50px]">
             <div class="flex justify-center content-center items-center py-[6px]">
-                <div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-[#6a80ac] text-[#88c3d3]">
-                    <h2 id="accordion-collapse-heading-1" class="text-[#6a80ac] bg-white">
-                        <button type="button" class="font-sora flex font-bold text-left  text-[20px] w-[350px] items-center justify-between border border-[2px] border-[#6a80ac] rounded-[20px] px-[20px] pt-[8px] pb-[6px] focus:text-[#6a80ac]" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
+                <div id="accordion-collapse" data-accordion="collapse" data-active-classes="border-[#88c3d3] text-[#ffffff] bg-[#88c3d3]">
+                    <h2 id="accordion-collapse-heading-1" class="text-[#6a80ac]">
+                        <button type="button" class="font-sora flex font-bold text-left  text-[20px] w-[350px] items-center justify-between border border-[2px] border-[#6a80ac] rounded-[20px] px-[20px] pt-[8px] pb-[6px]" data-accordion-target="#accordion-collapse-body-1" aria-expanded="false" aria-controls="accordion-collapse-body-1">
                             <span></span>
                             <span>El Plan</span>
                             <svg data-accordion-icon class="w-6 h-6 shrink-0 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
@@ -235,9 +235,9 @@
         <!------------------------- ITEMS ACORDION 2 ---------------------------->
         <div class="container mx-auto">
             <div class="flex justify-center content-center items-center py-[6px]">
-                <div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-[#6a80ac] text-[#88c3d3]">
-                    <h2 id="accordion-collapse-heading-2" class="text-[#6a80ac] hover:text-[#88c3d3] active:text-[#88c3d3]">
-                        <button type="button" class="font-sora flex font-bold text-left text-[20px] w-[350px] items-center justify-between border border-[2px] border-[#6a80ac] rounded-[20px] px-[20px] pt-[8px] pb-[6px] focus:text-[#6a80ac] " data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
+                <div id="accordion-collapse" data-accordion="collapse" data-active-classes="border-[#88c3d3] text-[#ffffff] bg-[#88c3d3]">
+                    <h2 id="accordion-collapse-heading-2" class="text-[#6a80ac]">
+                        <button type="button" class="font-sora flex font-bold text-left  text-[20px] w-[350px] items-center justify-between border border-[2px] border-[#6a80ac] rounded-[20px] px-[20px] pt-[8px] pb-[6px]" data-accordion-target="#accordion-collapse-body-2" aria-expanded="false" aria-controls="accordion-collapse-body-2">
                             <span></span>
                             <span>Monitoreo de la bahía</span>
                             <svg data-accordion-icon class="w-6 h-6 shrink-0 " fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>

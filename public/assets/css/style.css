@@ -1057,10 +1057,6 @@ html {
   margin-top: 0.5rem;
 }
 
-.mt-\[15px\] {
-  margin-top: 15px;
-}
-
 .block {
   display: block;
 }
@@ -1141,6 +1137,10 @@ html {
   height: 20px;
 }
 
+.h-auto {
+  height: auto;
+}
+
 .h-screen {
   height: 100vh;
 }
@@ -1197,14 +1197,6 @@ html {
   height: 0.25rem;
 }
 
-.h-\[120px\] {
-  height: 120px;
-}
-
-.h-auto {
-  height: auto;
-}
-
 .w-4 {
   width: 1rem;
 }
@@ -1259,6 +1251,10 @@ html {
 
 .w-\[120px\] {
   width: 120px;
+}
+
+.w-\[96\%\] {
+  width: 96%;
 }
 
 .w-7\/12 {
@@ -1355,14 +1351,6 @@ html {
 
 .w-44 {
   width: 11rem;
-}
-
-.w-\[96\%\] {
-  width: 96%;
-}
-
-.max-w-6xl {
-  max-width: 72rem;
 }
 
 .shrink-0 {
@@ -1536,10 +1524,6 @@ html {
   border-radius: 9999px;
 }
 
-.rounded-\[26px\] {
-  border-radius: 26px;
-}
-
 .border-\[1px\] {
   border-width: 1px;
 }
@@ -1617,6 +1601,11 @@ html {
   border-color: rgb(192 228 241 / var(--tw-border-opacity));
 }
 
+.border-\[\#88c3d3\] {
+  --tw-border-opacity: 1;
+  border-color: rgb(136 195 211 / var(--tw-border-opacity));
+}
+
 .bg-azul {
   --tw-bg-opacity: 1;
   background-color: rgb(2 107 172 / var(--tw-bg-opacity));
@@ -1689,6 +1678,11 @@ html {
 .bg-\[\#6A88B4\] {
   --tw-bg-opacity: 1;
   background-color: rgb(106 136 180 / var(--tw-bg-opacity));
+}
+
+.bg-\[\#88c3d3\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(136 195 211 / var(--tw-bg-opacity));
 }
 
 .bg-inicio {
@@ -2233,6 +2227,11 @@ html {
 .text-blue-600 {
   --tw-text-opacity: 1;
   color: rgb(37 99 235 / var(--tw-text-opacity));
+}
+
+.text-\[\#ffffff\] {
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .underline {
@@ -3335,8 +3334,8 @@ ul.dashed-1 > li:before {
     height: 100%;
   }
 
-  .md\:h-auto {
-    height: auto;
+  .md\:h-\[94\%\] {
+    height: 94%;
   }
 
   .md\:h-\[380px\] {
@@ -3431,6 +3430,10 @@ ul.dashed-1 > li:before {
     height: 80px;
   }
 
+  .md\:h-auto {
+    height: auto;
+  }
+
   .md\:h-\[860px\] {
     height: 860px;
   }
@@ -3441,14 +3444,6 @@ ul.dashed-1 > li:before {
 
   .md\:h-6 {
     height: 1.5rem;
-  }
-
-  .md\:h-\[90\%\] {
-    height: 90%;
-  }
-
-  .md\:h-\[94\%\] {
-    height: 94%;
   }
 
   .md\:w-auto {
@@ -3523,24 +3518,8 @@ ul.dashed-1 > li:before {
     width: 1.5rem;
   }
 
-  .md\:max-w-2xl {
-    max-width: 42rem;
-  }
-
-  .md\:max-w-3xl {
-    max-width: 48rem;
-  }
-
-  .md\:max-w-4xl {
-    max-width: 56rem;
-  }
-
   .md\:max-w-5xl {
     max-width: 64rem;
-  }
-
-  .md\:max-w-6xl {
-    max-width: 72rem;
   }
 
   .md\:py-\[50px\] {
