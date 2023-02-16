@@ -1,3 +1,4 @@
+@import url(../fonts/sora_fonts.css);
 /* ---------- CSS MAS WIDTH 992     -------- */
 @media (max-width: 992px) {
 	.navbar-collapse {
@@ -36,6 +37,7 @@ body {
 	padding-bottom: 30px;
 	padding-top: 20px;
 }
+
 p, h1, h2, h3, h4, h5, h6{
 	font-family: "Blogger Sans" !important;
 }
@@ -45,14 +47,22 @@ p, h1, h2, h3, h4, h5, h6{
 	background-color: #026bb2;
 	height: 10vh;
 }
-
+#area-header-lsh{
+	background-color: #6993be;
+	height: 10vh;
+}
 .logo > a > img {
 	/* width: 150px; */
 	width: 32vw;
 	height: 6vh;
 	margin-left: 24vw;
 }
-
+.logo-lsh > a > img {
+	height: 6vh;
+}
+.muni-ptovaras > img{
+	height: 3vh;
+}
 .logo-secundario > button {
 	border: none;
 	background-color: #f7f7f7;
@@ -169,7 +179,14 @@ p, h1, h2, h3, h4, h5, h6{
 	height: 10vh;
 	z-index: 10001;
 }
-
+#area-footer-lsh{
+	background-color: #102b42;
+	height: 10vh;
+}
+.logo-footer > img{
+	height: 8vh;
+	margin-top: 1vh;
+}
 /* ----------  CSS MENU BOTTOM      -------- */
 .icon-foot-01 {
 	text-align: right;
@@ -1710,4 +1727,237 @@ p, h1, h2, h3, h4, h5, h6{
 
 .cont-popup-done > button:hover{
 	background-color: #FFFFFF !important;
+}
+
+/*--------------------------------CSS LAGO SIN HUELLA --------------------------------*/
+#contenido-lsh{
+	margin-top: 10vh;
+}
+.bg-lagosinhuella{
+	height: 40vh;
+	background-image: url(../img/lagosinhuella/background_home_02.webp);
+	background-position: top center;
+	background-repeat: no-repeat;
+	/* background-attachment: fixed; */
+	background-size: cover;
+	background-color: #fff;
+}
+.text-img{
+	color: white;
+	font-size: 23px;
+	font-family: 'Sora' !important;
+	margin-top: 15vh;
+	text-shadow: 1px 1px 2px black;
+}
+.sponsor{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.sponsor > p{
+	font-family: 'Sora' !important;
+	font-size: 16px;
+}
+.sponsor-logos{
+	padding-bottom: 20px;
+}
+.lema-cont{
+	padding-top: 40px;
+	padding-bottom: 40px;
+}
+.lema-cont > img{
+	width: 25%;
+}
+.lema-cont > h5{
+	font-family: 'Sora' !important;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 600;
+	padding-bottom: 30px;
+	padding-top: 10px;
+}
+
+.accordion-contenido > h5{
+	font-family: 'Sora' !important;
+	font-size: 20px;
+	line-height: 24px;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+.accordion-contenido > p{
+	font-family: 'Sora' !important;
+	font-size: 18px;
+	line-height: 24px;
+	font-weight: 300;
+	margin-bottom: 30px;
+}
+.accordion-contenido > p > strong{
+	font-weight: 600;
+}
+.accordion-contenido > img{
+	border-radius: 20px;
+	margin-bottom: 30px;
+}
+.body-num{
+	width: 10%;
+}
+#mapa-muestreo{
+	padding-bottom: 40px;
+	padding-top: 20px;
+}
+.titulos-1{
+	text-align: center;
+	font-family: 'Sora' !important;
+	font-size: 24px;
+	line-height: 26px;
+	font-weight: 600;
+	margin-bottom: 30px;
+}
+#grafico-muestreo{
+	padding-bottom: 40px;
+	padding-top: 20px;
+}
+.select-puntos{
+	font-family: 'Sora' !important;
+	font-size: 18px;
+	text-transform: uppercase;
+	width: 76% !important;
+	margin-left: 12%;
+	border: 1px solid #0e6bac;
+	padding: 6px 30px 6px 30px;
+	border-radius: 20px;
+}
+.btn-filtro-personalizado-1{
+	text-align: center;
+	font-family: 'Sora' !important;
+	width: 70% !important;
+	font-size: 18px;
+	padding-bottom: 4px;
+	margin-left: 15%;
+}
+.buscador-personalizado > label{
+	font-family: 'Sora' !important;
+	font-size: 14px;
+}
+.buscador-personalizado > input{
+	font-family: 'Sora' !important;
+	font-size: 14px;
+	width: 120px;
+	border: 1px solid #0e6bac;
+	padding: 4px;
+	border-radius: 20px;
+}
+.buscador-personalizado > button{
+	font-family: 'Sora' !important;
+	font-size: 16px;
+	color: white;
+	border: 1px solid #0e6bac;
+	background-color: #0e6bac;
+	margin-top: 20px;
+	padding: 4px 20px 4px 20px;
+	margin-bottom: 20px;
+	border-radius: 20px;
+}
+.botones-muestreo{
+	margin-bottom: 50px;
+}
+.box-info-1 {
+	width: 46vw;
+	height: 12vh;
+	padding: 10px;
+	margin-left: 1vw;
+	margin-right: 1vw;
+	margin-top: 1vh;
+	margin-bottom: 1vh;
+	border: 1px solid #026bb2;
+	border-radius: 20px;
+}
+.box-info-1 > hr{
+	height: 2px;
+	margin-top: -5px;
+	margin-bottom: 4px;
+	background-color: #0e6bac;
+	margin-left: -10px;
+}
+.btn-muestreo > h5{
+	font-family: 'Sora' !important;
+	font-size: 16px;
+}
+.btn-muestreo > button{
+	width: 44vw;
+	height: 12vh;
+	border: 1px solid #face1d;
+	background-color: white;
+	font-family: 'Sora' !important;
+	font-size: 16px;
+	margin-top: 26px;
+	border-radius: 20px;
+}
+
+.btn-muestreo-1 > button{
+	width: 46vw;
+	height: 12vh;
+	border: 1px solid #face1d;
+	background-color: white;
+	font-family: 'Sora' !important;
+	font-size: 16px;
+	border-radius: 20px;
+	margin-left: 1vw;
+}
+.btn-muestreo-1 > button > a,
+.btn-muestreo-2 > button > a{
+	text-decoration: none;
+	color: black;
+	font-family: 'Sora' !important;
+	font-size: 16px;
+	text-align: center;
+}
+
+.btn-muestreo-2 > button{
+	width: 44vw;
+	height: 12vh;
+	border: 1px solid #face1d;
+	background-color: white;
+	font-family: 'Sora' !important;
+	font-size: 16px;
+	border-radius: 20px;
+}
+.intro-informes{
+	margin-top: 40px;
+	margin-bottom: 50px;
+}
+.intro-informes > h4{
+	color: #face1d;
+	font-family: 'Sora' !important;
+	font-size: 26px;
+	font-weight: 600;
+	margin-bottom: 20px;
+}
+.intro-informes > h5{
+	color: black;
+	font-family: 'Sora' !important;
+	font-size: 20px;
+	font-weight: 600;
+}
+.intro-informes > p{
+	color: black;
+	font-family: 'Sora' !important;
+	font-size: 18px;
+	font-weight: 300;
+}
+.contenido-informes{
+	margin-bottom: 50px;
+}
+.informes-items{
+	margin-bottom: 20px;
+}
+.icono-informes > img{
+	width: 26px;
+}
+.items-center > a{
+	text-decoration: none;
+	color: black;
+	font-family: 'Sora' !important;
+	font-size: 18px;
+	font-weight: 300;
+	margin-top: 10px;
 }

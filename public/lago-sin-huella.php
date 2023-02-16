@@ -343,9 +343,9 @@
         </div>
     </div>
 	
-    <div class="containermx-auto" id='datefilter' style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
+    <div class="container mx-auto" id='datefilter' style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
         <div class="flex flex-row justify-center items-center content-center">
-            <div class="md:w-6/12 3xl:w-5/12 flex justify-between items-center content-cente">
+            <div class="md:w-6/12 3xl:w-5/12 flex justify-between items-center content-center">
                 <label for="startDate" class="font-sora font-light md:text-[16px] 3xl:text-[18px]">Desde:</label>
                 <input id="startDate"  type="date" value='<?php echo $_GET['startdate'] ?>' class="font-sora border-[1px] border-azul md:text-[15px] 3xl:text-[16px] md:leading-[15px] 3xl:leading-[16px] md:px-[20px] 3xl:px-[30px] py-[4px] rounded-[25px]">
                 <laberl for="endDate" class="font-sora font-light md:text-[16px] 3xl:text-[18px]">Hasta:</laberl>

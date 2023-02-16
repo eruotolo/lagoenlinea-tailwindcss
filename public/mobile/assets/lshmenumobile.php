@@ -1,24 +1,25 @@
-<div class="container-fluid" id="area-header">
+<div class="container-fluid" id="area-header-lsh">
     <div class="row">
-
-        <!-- <div class="col-10 text-center logo">
-            <a href="/mobile/"><img src="assets/img/logo_img.svg" alt="logo"></a>
-        </div> -->
-
         <div class="col-12">
-            <nav class="navbar  navbar-light">
+            <nav class="navbar navbar-light">
+
                 <div class="container-fluid">
 
-                    <div class="text-center logo">
-                        <a href="/mobile/"><img src="assets/img/logo_img.svg" alt="logo"></a>
-                    </div>
+                        <div class="col-2 muni-ptovaras">
+                            <img src="../assets/img/lagosinhuella/muni-ptovaras.svg" alt="Municipalidad Puerto Varas">
+                        </div>
+                        <div class="col-6 text-center logo-lsh">
+                            <a href="index.php"><img src="../assets/img/lagosinhuella/logo-wh.svg" alt="Logo Lago Sin Huella"></a>
+                        </div>
+                        <div class="col-2 text-end">
+                            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                        </div>
 
-                    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
+
 
                     <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-
                         <div class="offcanvas-header">
                             <div class="col-12 logo-secundario text-center">
                                 <img src="assets/img/logo_img_01.svg" alt="logo">
