@@ -22,7 +22,7 @@
           name="viewport">
     <meta content="ie=edge" http-equiv="X-UA-Compatible">
     <link href="assets/img/favicon.png" rel="shortcut icon" type="image/x-icon">
-    <title>Lago en Línea</title>
+    <title>Lago en Línea | Lago Sin Huella</title>
 
     <!-- CSS PERSONALIZADO -->
     <link rel="stylesheet" href="assets/css/style.css">

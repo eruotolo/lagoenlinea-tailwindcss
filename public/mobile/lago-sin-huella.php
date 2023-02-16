@@ -6,14 +6,14 @@ include('../admin/include/conf/dbselect.php');
 
 <head>
     <!-- DETECTA MOBILE -->
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         let dispositivo = navigator.userAgent.toLowerCase();
         if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
             // No hacer nada.
         }else{
             document.location = "../lago-sin-huella.php";
         }
-    </script>
+    </script>-->
 
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -79,6 +79,9 @@ include('../admin/include/conf/dbselect.php');
         }
         .accordion-button:not(.collapsed)::after {
             color: #6a80ac !important;
+        }
+        .gm-ui-hover-effect {
+            display: none !important;
         }
     </style>
 
@@ -258,7 +261,7 @@ include('../admin/include/conf/dbselect.php');
         </div>
 
 
-        <div class="container" id='datefilter' style="display: show" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
+        <div class="container" id='datefilter' style="display: none" > <!--Filtro de Fecha, se habilita con el boton "id='customp'"-->
             <div class="flex flex-row justify-center items-center content-center">
                 <div class="flex justify-between items-center content-center buscador-personalizado">
                     <label for="startDate" class="font-sora font-light md:text-[16px] 3xl:text-[18px]">Desde:</label>
