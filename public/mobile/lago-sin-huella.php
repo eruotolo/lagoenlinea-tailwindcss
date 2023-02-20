@@ -6,15 +6,16 @@ include('../admin/include/conf/dbselect.php');
 
 <head>
     <!-- DETECTA MOBILE -->
-    <!--<script type="text/javascript">
+    <!--
+    <script type="text/javascript">
         let dispositivo = navigator.userAgent.toLowerCase();
         if (dispositivo.search(/iphone|ipod|ipad|android/) > -1) {
             // No hacer nada.
         }else{
             document.location = "../lago-sin-huella.php";
         }
-    </script>-->
-
+    </script>
+    -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -83,6 +84,12 @@ include('../admin/include/conf/dbselect.php');
         .gm-ui-hover-effect {
             display: none !important;
         }
+        .item-01{
+            padding-left: 40%;
+        }
+        .item-02{
+            padding-left: 15%;
+        }
     </style>
 
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -133,7 +140,7 @@ include('../admin/include/conf/dbselect.php');
         <div class="container-fluid bg-lagosinhuella">
             <div class="row">
                 <div class="col-12 align-items-end">
-                    <h2 class="text-center text-img shadow-sm">Iniciativa liderada por la municipalidad que mediante la articulación público privada, busca proteger la bahía de Puerto Varas. </h2>
+                    <h2 class="text-center text-img">Iniciativa liderada por la municipalidad que mediante la articulación público privada, busca proteger la bahía de Puerto Varas. </h2>
                 </div>
             </div>
         </div>
@@ -152,7 +159,7 @@ include('../admin/include/conf/dbselect.php');
         <div class="container lema-lsh">
             <div class="row">
                 <div class="col-12 text-center lema-cont">
-                    <img src="assets/img/lagosinhuella/icono-01.svg" alt="icono-01">
+                    <img src="assets/img/lagosinhuella/icono-03.svg" alt="icono-01">
                     <h5>Monitoreo permanente, transparente y abierto a la comunidad</h5>
                     <img src="assets/img/lagosinhuella/icono-02.svg" alt="icono-01">
                     <h5>Información para tomar medidas que mejorarán el futuro del lago</h5>
@@ -167,7 +174,7 @@ include('../admin/include/conf/dbselect.php');
                     <!-- ITEM ACCORDION 01 -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
+                            <button class="accordion-button collapsed item-01" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="false" aria-controls="panelsStayOpen-collapseOne">
                                 El Plan
                             </button>
                         </h2>
@@ -203,7 +210,7 @@ include('../admin/include/conf/dbselect.php');
                     <!-- ITEM ACCORDION 02 -->
                     <div class="accordion-item">
                         <h2 class="accordion-header" id="panelsStayOpen-headingTwo">
-                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
+                            <button class="accordion-button collapsed item-02" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="false" aria-controls="panelsStayOpen-collapseTwo">
                                 Monitoreo de la bahía
                             </button>
                         </h2>
@@ -362,7 +369,7 @@ include('../admin/include/conf/dbselect.php');
                         <div>
                             <!-- Aquí se tiene que cargar el ultimo muestre-->
                             <div style="width: 100%;height: 100%;display: flex;">
-                                <img id='loader-label' src='assets/img/loading.gif' style='width:20px;margin: auto;'>
+                                <img id='loader-label' src='../assets/img/loading.gif' style='width:20px;margin: auto;'>
                                 <div id="coli-value"></div>
                             </div>
                         </div>

@@ -276,8 +276,8 @@
                 </div>
             </div>
 
-            <div class="grid grid-cols-1 py-[30px]">
-                <img class="w-[70%] ml-[15%]" src="assets/img/lagosinhuella/lagosinhuella-07.webp" alt="Puntos del Mapa">
+            <div class="grid grid-cols-1 py-[30px] flex justify-center">
+                <img class="md:w-[80%] md:ml-[10%]" src="assets/img/lagosinhuella/mapa-01.svg" alt="Puntos del Mapa">
             </div>
 
             <div class="grid grid-cols-1">

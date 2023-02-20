@@ -1734,20 +1734,21 @@ p, h1, h2, h3, h4, h5, h6{
 	margin-top: 10vh;
 }
 .bg-lagosinhuella{
-	height: 40vh;
-	background-image: url(../img/lagosinhuella/background_home_02.webp);
+	height: 50vh;
+	background-image: url(../img/lagosinhuella/background_home_03.webp);
 	background-position: top center;
 	background-repeat: no-repeat;
 	/* background-attachment: fixed; */
 	background-size: cover;
 	background-color: #fff;
+
 }
 .text-img{
 	color: white;
 	font-size: 23px;
 	font-family: 'Sora' !important;
-	margin-top: 15vh;
-	text-shadow: 1px 1px 2px black;
+	margin-top: 21.5vh;
+	/*text-shadow: 1px 1px 2px black;*/
 }
 .sponsor{
 	padding-top: 40px;
@@ -1862,7 +1863,7 @@ p, h1, h2, h3, h4, h5, h6{
 }
 .box-info-1 {
 	width: 46vw;
-	height: 12vh;
+	height: 14vh;
 	padding: 10px;
 	margin-left: 1vw;
 	margin-right: 1vw;
@@ -1884,7 +1885,7 @@ p, h1, h2, h3, h4, h5, h6{
 }
 .btn-muestreo > button{
 	width: 44vw;
-	height: 12vh;
+	height: 14vh;
 	border: 1px solid #face1d;
 	background-color: white;
 	font-family: 'Sora' !important;
@@ -1895,7 +1896,7 @@ p, h1, h2, h3, h4, h5, h6{
 
 .btn-muestreo-1 > button{
 	width: 46vw;
-	height: 12vh;
+	height: 14vh;
 	border: 1px solid #face1d;
 	background-color: white;
 	font-family: 'Sora' !important;
@@ -1914,7 +1915,7 @@ p, h1, h2, h3, h4, h5, h6{
 
 .btn-muestreo-2 > button{
 	width: 44vw;
-	height: 12vh;
+	height: 14vh;
 	border: 1px solid #face1d;
 	background-color: white;
 	font-family: 'Sora' !important;
