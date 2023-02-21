@@ -612,7 +612,7 @@
                 valueAxis.renderer.opposite = opposite;
             }
 
-            createAxisAndSeries("values_chart", "values_const_chart", "MUETRA DE COLIFORME", false, "circle");
+            createAxisAndSeries("values_chart", "values_const_chart", "MUESTRA DE COLIFORME", false, "circle");
 			//createAxisAndSeries("values_const_chart", "COLIFORMES FECALES", false, "circle");
 			
             // Add legend
