@@ -401,7 +401,7 @@
 		$sql = "SELECT CONCAT(YEAR(Fecha),'-',MONTH(Fecha)) as 'month' ,DATE_FORMAT(`Fecha`,'%Y - %M') as 'monthname'
 				FROM puntos_muestras
 				group by CONCAT(YEAR(Fecha),'-',MONTH(Fecha)),DATE_FORMAT(`Fecha`,'%Y - %M')
-				order by DATE_FORMAT(`Fecha`,'%Y - %M')";
+				order by Fecha";
         $result = mysql_query($sql);
 		$months = array();
 
