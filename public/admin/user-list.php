@@ -73,9 +73,9 @@
 
         function operateFormatter(value, row, index) {
             return [
-              /*  "<a rel='tooltip' title='Ver Perfil' class='btn btn-simple btn-info btn-icon table-action view noblock' href='javascript:void(0)'>",
-                    '<i class="fa fa-image"></i>',
-                '</a>',*/
+			"<a rel='tooltip' title='Cambiar Password' class='btn btn-simple btn-info btn-icon table-action password noblock' href='javascript:void(0)'>",
+                    '<i class="fa fa-lock"></i>',
+                '</a>',
                 '<a rel="tooltip" title="Editar" class="btn btn-simple btn-info btn-icon table-action edit noblock" href="javascript:void(0)">',
                     '<i class="fa fa-edit"></i>',
                 '</a>',
@@ -139,6 +139,41 @@
 						)
 					  }
 					});
+                },
+                'click .password': function (e, value, row, index) {
+					swal({
+					  title: 'Seleccione nuevo Password',
+					  input: 'text',
+					  inputAttributes: {
+						autocapitalize: 'off'
+					  },
+					  showCancelButton: true,
+					  confirmButtonText: 'Cambiar',
+					  showLoaderOnConfirm: true,
+					  preConfirm: (password) => {
+						$.ajax({
+						type: "POST",
+						url: "jquery/changepassword.php",
+						data: {id: row.id, password:password, email:row.email},
+						cache: false,
+						success: function(output){
+							swal(
+							  'Exito',
+							  'El password fue modificado',
+							  'success'
+							);							
+						}
+						});
+					  },
+					  allowOutsideClick: () => !Swal.isLoading()
+					}).then((result) => {
+					  if (result.isConfirmed) {
+						Swal.fire({
+						  title: `${result.value.login}'s avatar`,
+						  imageUrl: result.value.avatar_url
+						})
+					  }
+					})
                 }
             };
 

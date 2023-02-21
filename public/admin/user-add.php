@@ -1,4 +1,5 @@
 <?php
+
 	if (!empty($_POST)) {
 		$rp = randomPassword(10,3,"lower_case,numbers")[0];		
 		$password = md5($rp);
@@ -32,13 +33,15 @@
 									1);";
 		$result=mysql_query($sql);
 			$lastid = mysql_insert_id();						
-			echo "<script type='text/javascript'>
-					   window.location = 'index.php?userid=$userid&section=employee-profile&created=y&id=$lastid';
-				  </script>";
+
 				  
 		$emailtosend = $_POST['email'];
 		$message = "Hola, <br />Tu usuario ha sido creado. A continuación se especifican las credenciales<br><br><b>Usuario: </b> {$_POST['nickname']}<br><b>Contraseña: </b> $rp <br><b>Para ingresar al back-end:</b> https://lagoenlinea.cl/admin";
-		$email = sendEmail($emailtosend, $email, "Credenciales de nuevo usuario", $message, $message, $file, $filename);			  
+		include('../assets/mail/send_mail.php');
+		$email = sendEmailGmail($emailtosend, $email, "Credenciales de nuevo usuario", $message, $message, $file, $filename);			  	
+			echo "<script type='text/javascript'>
+					   window.location = 'index.php?userid=$userid&section=employee-profile&created=y&id=$lastid';
+				  </script>";
 	}	
 
 
