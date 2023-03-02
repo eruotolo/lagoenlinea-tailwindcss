@@ -79,7 +79,7 @@
 	<script src="https://cdn.amcharts.com/lib/4/core.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/charts.js"></script>
 	<script src="https://cdn.amcharts.com/lib/4/themes/animated.js"></script>
-
+	<script src="//www.amcharts.com/lib/4/lang/es_ES.js"></script>
 </head>
 <body>
 
@@ -470,6 +470,8 @@
 
 <script type="text/javascript">
 
+
+
 	var datetoday = new Date();
 	var puntoid;
 	if (datetoday.getMonth()+1 < 10) {
@@ -549,7 +551,7 @@
 				console.log(e);
 			}
 		});		
-	}
+	}	
 	
 	function drawChart(data) {
 		
@@ -562,7 +564,7 @@
             // Create chart instance
             var chart = am4core.create("chartdiv1", am4charts.XYChart);
             //
-
+			chart.language.locale = am4lang_es_ES;
             // Increase contrast by taking evey second color
             chart.colors.step = 2;
 
@@ -599,7 +601,7 @@
                 series2.strokeWidth = 1.5;
                 series2.yAxis = valueAxis;
                 series2.name = "UMBRAL 1.000 NMP/100 ml";
-                series2.tooltipText = "{name}: [bold]{valueY}[/]";
+                //series2.tooltipText = "{name}: [bold]{valueY}[/]";
                 series2.tensionX = 0.8;
                 series2.showOnInit = true;				
 
@@ -610,6 +612,10 @@
                 valueAxis.renderer.line.stroke = series.stroke;
                 valueAxis.renderer.labels.template.fill = series.stroke;
                 valueAxis.renderer.opposite = opposite;
+				
+				var bullet = series.bullets.push(new am4charts.CircleBullet());
+				bullet.circle.stroke = interfaceColors.getFor("background");
+				bullet.circle.strokeWidth = 2;				  
             }
 
             createAxisAndSeries("values_chart", "values_const_chart", "MUESTRA DE COLIFORME", false, "circle");

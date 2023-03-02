@@ -37,11 +37,50 @@
 				  
 		$emailtosend = $_POST['email'];
 		$message = "Hola, <br />Tu usuario ha sido creado. A continuación se especifican las credenciales<br><br><b>Usuario: </b> {$_POST['nickname']}<br><b>Contraseña: </b> $rp <br><b>Para ingresar al back-end:</b> https://lagoenlinea.cl/admin";
-		include('../assets/mail/send_mail.php');
-		$email = sendEmailGmail($emailtosend, $email, "Credenciales de nuevo usuario", $message, $message, $file, $filename);			  	
+		$email = sendEmailGmail($emailtosend, "{$_POST['firstname']} '{$_POST['lastname']}'", "Credenciales de nuevo usuario", "Hola, <br />Tu usuario ha sido creado. A continuación se especifican las credenciales<br><br><b>Usuario: </b> {$_POST['nickname']}<br><b>Contraseña: </b> $rp <br><b>Para ingresar al back-end:</b> https://lagoenlinea.cl/admin", "Hola, <br />Tu usuario ha sido creado. A continuación se especifican las credenciales<br><br><b>Usuario: </b> {$_POST['nickname']}<br><b>Contraseña: </b> $rp <br><b>Para ingresar al back-end:</b> https://lagoenlinea.cl/admin", $file, $filename);			  				
 			echo "<script type='text/javascript'>
 					   window.location = 'index.php?userid=$userid&section=employee-profile&created=y&id=$lastid';
 				  </script>";
+	}	
+	
+	function sendEmailGmail($emailreceiver, $userfullname, $subject, $html, $text, $file, $filename) {
+
+		include_once('assets/mail/PhpMailer/PHPMailer.php');
+		include_once('assets/mail/PhpMailer/Exception.php');
+		include_once('assets/mail/PhpMailer/SMTP.php');
+		
+		$mail = new PHPMailer\PHPMailer\PHPMailer();
+		$mail->IsSMTP();
+		$mail->Mailer = "smtp";	
+		
+		$mail->SMTPDebug  = 0;  
+		$mail->SMTPAuth   = TRUE;
+		$mail->SMTPSecure = "tls";
+		$mail->Port       = 587;
+		$mail->Host       = "smtp.gmail.com";
+		$mail->Username   = "facturalive.cfe4@gmail.com";
+		$mail->Password   = "xvbtypbqvaefqfvq";	
+			
+		$mail->IsHTML(true);
+		$mail->AddAddress($emailreceiver, $userfullname);
+		$mail->SetFrom("sender@lagoenlinea.com", "Lago en Linea");
+	//	$mail->AddReplyTo("reply-to-email@domain", "reply-to-name");
+	//	$mail->AddCC("cc-recipient-email@domain", "cc-recipient-name");
+		$mail->Subject = $subject;
+		//$attachment_content = chunk_split(base64_encode($file));
+		//$mail->addStringAttachment($file,$filename);	
+		$content = $html;
+		$mail->MsgHTML($content); 
+		
+		$result = array();
+		if(!$mail->Send()) {
+		  $result['result'] = 0;
+		  $result['error'] = $mail->ErrorInfo;
+		  return json_encode($result);
+		} else {
+		  $result['result'] = 1;
+		  return json_encode($result);
+		}	
 	}	
 
 
@@ -81,34 +120,6 @@
 		return $passwords; // return the generated password
 	}
 
-
-
-	function sendEmail($emailreceiver, $userfullname, $subject, $html, $text, $file, $filename) {
-
-		$apptitle = 'Lago en Linea';	
-		
-		include_once('assets/mail/mailin/Mailin.php');
-		$mailin = new Mailin('edgardo@indaga.me', 'AYFRpLaw56bgBWJG');
-		$mailin->
-		addTo($emailreceiver, $userfullname)->
-		setFrom('contacto@lagoenlinea.cl', $apptitle)->
-		setReplyTo('contacto@lagoenlinea.cl',$apptitle)->
-		//setBcc('nachodeleon77@gmail.com')->
-		setSubject($subject)->
-		setText('Comprobante fiscal electronico')->
-		setHtml($html);
-		//$attachment_content = chunk_split(base64_encode($file));
-		//$mailin->createAttachment(array("$filename"=>$attachment_content));
-		
-		$res = $mailin->send();
-	//	unlink($filename);
-	//	echo $res;
-		return $res;
-		/*
-		El mensaje de éxito se enviará de esta forma:
-		{'result' => true, 'message' => 'E-MAILS enviados'}
-		*/	
-	}
 		
 ?>
 <style>
